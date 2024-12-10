@@ -60,7 +60,7 @@ module.exports = (github, context) => {
           page,
         });
 
-        console.log("xxx", regex.test);
+        console.log("xxx", regex);
         const found = comments.data.find((comment) => regex.test(comment.body));
         if (found) {
           return found;
@@ -72,6 +72,7 @@ module.exports = (github, context) => {
       }
     } catch (error) {
       console.error("Error finding comment:", error);
+      
     }
   }
 
