@@ -1,0 +1,25 @@
+name: Pull request environment
+
+on:
+  pull_request:
+    types: [closed]
+env:
+  MANTAINERS: '["cdimonaco", "dottorblaster", "nelsonkopliku", "arbulu89", "jagabomb", "emaksy", "gagandeepb", "balanza", "janvhs"]'
+  PR_ENV_LABEL: env
+  PR_NUMBER: "${{ github.event.pull_request.number }}"
+
+jobs:
+  xxx:
+    name: Create the environment
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+      - name: Create the environment
+        uses: actions/github-script@v7
+        id: set-result
+        with:
+          script: |
+            const { onPrEnvClosed } = require('.github/pr_env.js')(github, context);
+
+            onPrEnvClosed();
