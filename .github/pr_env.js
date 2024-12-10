@@ -72,18 +72,12 @@ module.exports = (github, context) => {
       }
     } catch (error) {
       console.error("Error finding comment:", error);
-      
     }
   }
 
   return {
     async onPrEnvCreated(domain) {
-      const comment = await findCommentByContent(
-        owner,
-        repo,
-        pullRequestNumber,
-        new RegExp(MARKER)
-      );
+      const comment = await findCommentByContent(new RegExp(MARKER));
       if (comment) {
         console.log("Comment already exists:", comment.html_url);
         return;
@@ -93,12 +87,7 @@ module.exports = (github, context) => {
     },
 
     async onPrEnvClosed() {
-      const comment = await findCommentByContent(
-        owner,
-        repo,
-        pullRequestNumber,
-        new RegExp(MARKER)
-      );
+      const comment = await findCommentByContent(new RegExp(MARKER));
       if (comment) {
         await removeComment(comment.id);
       }
