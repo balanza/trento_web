@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.34.2">
+    <meta name="project" content="Trento Web v2.4.0">
+
+
+    <title>Alerting — Trento Web v2.4.0</title>
+    <link rel="stylesheet" href="dist/html-elixir-F2VRIOKR.css" />
+
+
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-K7URE6B4.js"></script>
+    <script src="dist/sidebar_items-7A183BD1.js"></script>
+    <script src="docs_config.js"></script>
+    <script async src="dist/html-YIPIRHGU.js"></script>
+
+  </head>
+  <body data-type="extras" class="page-extra">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="body-wrapper">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+        <a href="readme.html" class="sidebar-projectImage">
+          <img src="assets/logo.svg" alt="Trento Web" />
+        </a>
+
+      <div>
+        <a href="readme.html" class="sidebar-projectName" translate="no">
+Trento Web
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v2.4.0
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
+      <li>
+        <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
+GUIDES
+        </button>
+      </li>
+
+        <li>
+          <button id="modules-list-tab-button" role="tab" data-type="modules" aria-controls="modules-tab-panel" aria-selected="false" tabindex="-1">
+            Modules
+          </button>
+        </li>
+
+
+        <li>
+          <button id="tasks-list-tab-button" role="tab" data-type="tasks" aria-controls="tasks-tab-panel" aria-selected="false" tabindex="-1">
+            <span translate="no">Mix</span> Tasks
+          </button>
+        </li>
+
+    </ul>
+  </div>
+
+  <div id="extras-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="extras-list-tab-button">
+    <ul id="extras-full-list" class="full-list"></ul>
+  </div>
+
+    <div id="modules-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="modules-list-tab-button" hidden>
+      <ul id="modules-full-list" class="full-list"></ul>
+    </div>
+
+
+    <div id="tasks-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="tasks-list-tab-button" hidden>
+      <ul id="tasks-full-list" class="full-list"></ul>
+    </div>
+
+</nav>
+
+<main class="content">
+  <output role="status" id="toast"></output>
+
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of Trento Web</span>
+            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          </label>
+          <button type="submit" class="search-button" aria-label="Submit Search">
+            <i class="ri-search-2-line ri-lg" aria-hidden="true" title="Submit search"></i>
+          </button>
+          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+            <i class="ri-close-line ri-lg" title="Cancel search"></i>
+          </button>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+<div id="top-content">
+  <h1>
+
+      <a href="https://github.com/trento-project/web/blob/main/guides/alerting/alerting.md#L1" title="View Source" class="icon-action" rel="help">
+        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        <span class="sr-only">View Source</span>
+      </a>
+
+
+    <span>Alerting</span>
+  </h1>
+
+<p>The Alerting feature notifies the SAP Administrator about important events detected in the Landscape being monitored/observed by Trento.</p><p>Some of the notified events:</p><ul><li><strong>Host Health detected critical</strong></li><li><strong>Cluster Health detected critical</strong></li><li><strong>Database Health detected critical</strong></li><li><strong>SAP System Health detected critical</strong></li><li>...</li></ul><h2 id="enabling-alerting" class="section-heading">
+  <a href="#enabling-alerting" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Enabling Alerting</span>
+</h2>
+<p>This feature is <strong>disabled by default</strong>.</p><p>Provide <code class="inline">ENABLE_ALERTING=true</code> as an environment variable when starting Trento.</p><h2 id="delivery-and-recipient" class="section-heading">
+  <a href="#delivery-and-recipient" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Delivery and Recipient</span>
+</h2>
+<p>A notification needs to be <em>delivered to someone</em> in <em>some way</em>.</p><p>With alerting enabled some extra configuration is needed to define the recipient and the delivery mechanism.</p><p>Currently <strong>authenticated SMTP</strong> is the <strong>only supported delivery mechanism</strong> for alert notifications.</p><pre><code class="makeup elixir" translate="no"><span class="nc">ENABLE_ALERTING</span><span class="o">=</span><span class="no">true</span><span class="w">
+</span><span class="nc">ALERT_SENDER</span><span class="o">=</span><span class="n">sender</span><span class="na">@yourmail</span><span class="o">.</span><span class="n">com</span><span class="w">
+</span><span class="nc">ALERT_RECIPIENT</span><span class="o">=</span><span class="n">recipient</span><span class="na">@yourmail</span><span class="o">.</span><span class="n">com</span><span class="w">
+
+</span><span class="nc">SMTP_SERVER</span><span class="o">=</span><span class="n">your</span><span class="o">.</span><span class="n">smtp</span><span class="o">-</span><span class="n">server</span><span class="o">.</span><span class="n">com</span><span class="w">
+</span><span class="nc">SMTP_PORT</span><span class="o">=</span><span class="mi">2525</span><span class="w">
+</span><span class="nc">SMTP_USER</span><span class="o">=</span><span class="n">user</span><span class="w">
+</span><span class="nc">SMTP_PASSWORD</span><span class="o">=</span><span class="n">password</span></code></pre><h2 id="enabling-alerting-at-a-later-stage" class="section-heading">
+  <a href="#enabling-alerting-at-a-later-stage" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Enabling Alerting at a later stage</span>
+</h2>
+<p>If your current Trento installation has Alerting disabled, you can enable it by upgrading the helm deployment.</p><pre><code class="makeup elixir" translate="no"><span class="n">helm</span><span class="w"> </span><span class="n">upgrade</span><span class="w">
+   </span><span class="o">--</span><span class="n">install</span><span class="w"> </span><span class="o">&lt;</span><span class="nc">THE_DEPLOYMENT</span><span class="o">&gt;</span><span class="w"> 
+   </span><span class="o">--</span><span class="n">set</span><span class="w"> </span><span class="n">trento</span><span class="o">-</span><span class="n">web</span><span class="o">.</span><span class="n">adminUser</span><span class="o">.</span><span class="n">password</span><span class="o">=</span><span class="o">&lt;</span><span class="nc">ADMIN_PASSWORD</span><span class="o">&gt;</span><span class="w">
+   </span><span class="o">--</span><span class="n">set</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="n">trento</span><span class="o">-</span><span class="n">runner</span><span class="o">.</span><span class="n">privateKey</span><span class="o">=</span><span class="o">&lt;</span><span class="nc">PRIVATE_SSH_KEY</span><span class="o">&gt;</span><span class="w">
+   </span><span class="o">--</span><span class="n">set</span><span class="w"> </span><span class="n">trento</span><span class="o">-</span><span class="n">web</span><span class="o">.</span><span class="n">alerting</span><span class="o">.</span><span class="n">enabled</span><span class="o">=</span><span class="no">true</span><span class="w">
+   </span><span class="o">--</span><span class="n">set</span><span class="w"> </span><span class="n">trento</span><span class="o">-</span><span class="n">web</span><span class="o">.</span><span class="n">alerting</span><span class="o">.</span><span class="n">smtpServer</span><span class="o">=</span><span class="o">&lt;</span><span class="nc">SMTP_SERVER</span><span class="o">&gt;</span><span class="w"> 
+   </span><span class="o">--</span><span class="n">set</span><span class="w"> </span><span class="n">trento</span><span class="o">-</span><span class="n">web</span><span class="o">.</span><span class="n">alerting</span><span class="o">.</span><span class="n">smtpPort</span><span class="o">=</span><span class="o">&lt;</span><span class="nc">SMTP_PORT</span><span class="o">&gt;</span><span class="w">
+   </span><span class="o">--</span><span class="n">set</span><span class="w"> </span><span class="n">trento</span><span class="o">-</span><span class="n">web</span><span class="o">.</span><span class="n">alerting</span><span class="o">.</span><span class="n">smtpUser</span><span class="o">=</span><span class="o">&lt;</span><span class="nc">SMTP_USER</span><span class="o">&gt;</span><span class="w">
+   </span><span class="o">--</span><span class="n">set</span><span class="w"> </span><span class="n">trento</span><span class="o">-</span><span class="n">web</span><span class="o">.</span><span class="n">alerting</span><span class="o">.</span><span class="n">smtpPassword</span><span class="o">=</span><span class="o">&lt;</span><span class="nc">SMTP_PASSWORD</span><span class="o">&gt;</span><span class="w">
+   </span><span class="o">--</span><span class="n">set</span><span class="w"> </span><span class="n">trento</span><span class="o">-</span><span class="n">web</span><span class="o">.</span><span class="n">alerting</span><span class="o">.</span><span class="n">sender</span><span class="o">=</span><span class="o">&lt;</span><span class="nc">ALERT_SENDER</span><span class="o">&gt;</span><span class="w"> 
+   </span><span class="o">--</span><span class="n">set</span><span class="w"> </span><span class="n">trento</span><span class="o">-</span><span class="n">web</span><span class="o">.</span><span class="n">alerting</span><span class="o">.</span><span class="n">recipient</span><span class="o">=</span><span class="o">&lt;</span><span class="nc">ALERT_RECIPIENT</span><span class="o">&gt;</span></code></pre>
+</div>
+
+<div class="bottom-actions" id="bottom-actions">
+  <div class="bottom-actions-item">
+
+      <a href="monitoring.html" class="bottom-actions-button" rel="prev">
+        <span class="subheader">
+          ← Previous Page
+        </span>
+        <span class="title">
+Monitoring
+        </span>
+      </a>
+
+  </div>
+  <div class="bottom-actions-item">
+
+      <a href="contributing.html" class="bottom-actions-button" rel="next">
+        <span class="subheader">
+          Next Page →
+        </span>
+        <span class="title">
+How to contribute
+        </span>
+      </a>
+
+  </div>
+</div>
+    <footer class="footer">
+      <p>
+
+        <span class="line">
+          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+            Search HexDocs
+          </button>
+
+            <a href="Trento Web.epub" title="ePub version">
+              Download ePub version
+            </a>
+
+        </span>
+      </p>
+
+      <p class="built-using">
+        Built using
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.34.2) for the
+
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+      </p>
+
+    </footer>
+  </div>
+</main>
+</div>
+
+  </body>
+</html>
