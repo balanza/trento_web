@@ -77,16 +77,13 @@ jobs:
       - name: Set final outputs
         id: set-outputs  # Added ID to reference this step
         run: |
-          if [[ "${{ steps.check-pr.outputs.running-on-pr }}" == "false" ]]; then
-            echo "Not on a PR, running all jobs"
-            echo "elixir-changed=true" >> $GITHUB_OUTPUT
-            echo "assets-changed=true" >> $GITHUB_OUTPUT
-          elif [[ "${{ steps.filter.outputs.all }}" == "true" ]]; then
-            echo "Need to run all jobs"
+          # if running on a PR, use detected changes, else set all as changed
+          # else if steps.filter.outputs.run-all == 'true', all changed
+          # othjerwise use detected changes
+          if [[ "${{ steps.check-pr.outputs.running-on-pr }}" == "false" || "${{ steps.filter.outputs.all }}" == "true" ]]; then
             echo "elixir-changed=true" >> $GITHUB_OUTPUT
             echo "assets-changed=true" >> $GITHUB_OUTPUT
           else
-            echo "Selective job run"
             echo "elixir-changed=${{ steps.filter.outputs.elixir }}" >> $GITHUB_OUTPUT
             echo "assets-changed=${{ steps.filter.outputs.assets }}" >> $GITHUB_OUTPUT
           fi
