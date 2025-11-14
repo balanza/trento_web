@@ -5,16 +5,16 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.34.2">
-    <meta name="project" content="Trento Web v2.4.0">
+    <meta name="project" content="Trento Web v2.5.0">
 
 
-    <title>TrentoWeb.V1.UsersController — Trento Web v2.4.0</title>
+    <title>TrentoWeb.V1.UsersController — Trento Web v2.5.0</title>
     <link rel="stylesheet" href="dist/html-elixir-F2VRIOKR.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-K7URE6B4.js"></script>
-    <script src="dist/sidebar_items-7A183BD1.js"></script>
+    <script src="dist/sidebar_items-4E929059.js"></script>
     <script src="docs_config.js"></script>
     <script async src="dist/html-YIPIRHGU.js"></script>
 
@@ -45,23 +45,23 @@
   <div class="sidebar-header">
     <div class="sidebar-projectInfo">
 
-        <a href="readme.html" class="sidebar-projectImage">
+        <a href="api-reference.html" class="sidebar-projectImage">
           <img src="assets/logo.svg" alt="Trento Web" />
         </a>
 
       <div>
-        <a href="readme.html" class="sidebar-projectName" translate="no">
+        <a href="api-reference.html" class="sidebar-projectName" translate="no">
 Trento Web
         </a>
         <div class="sidebar-projectVersion" translate="no">
-          v2.4.0
+          v2.5.0
         </div>
       </div>
     </div>
     <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
       <li>
         <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
-GUIDES
+Info
         </button>
       </li>
 
@@ -132,7 +132,7 @@ GUIDES
       </a>
 
     <span translate="no">TrentoWeb.V1.UsersController</span> 
-    <small class="app-vsn" translate="no">(Trento Web v2.4.0)</small>
+    <small class="app-vsn" translate="no">(Trento Web v2.5.0)</small>
 
   </h1>
 
@@ -169,6 +169,14 @@ GUIDES
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#get_action/1" data-no-tooltip translate="no">get_action(map)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#get_policy_resource/1" data-no-tooltip translate="no">get_policy_resource(_)</a>
 
       </div>
@@ -186,6 +194,30 @@ GUIDES
     <div class="summary-row">
       <div class="summary-signature">
         <a href="#open_api_operation/1" data-no-tooltip translate="no">open_api_operation(action)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#patch/2" data-no-tooltip translate="no">patch(conn, params)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#put/2" data-no-tooltip translate="no">put(conn, params)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#revoke_personal_access_token/2" data-no-tooltip translate="no">revoke_personal_access_token(conn, map)</a>
 
       </div>
 
@@ -215,14 +247,6 @@ GUIDES
 
     </div>
 
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#update/2" data-no-tooltip translate="no">update(conn, map)</a>
-
-      </div>
-
-    </div>
-
 </div>
 
   </section>
@@ -245,7 +269,7 @@ GUIDES
     </a>
     <h1 class="signature" translate="no">create(conn, _)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/controllers/v1/users_controller.ex#L53" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/controllers/v1/users_controller.ex#L110" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -267,7 +291,29 @@ GUIDES
     </a>
     <h1 class="signature" translate="no">delete(conn, map)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/controllers/v1/users_controller.ex#L158" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/controllers/v1/users_controller.ex#L183" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="get_action/1">
+
+  <div class="detail-header">
+    <a href="#get_action/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_action(map)</h1>
+
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/controllers/v1/users_controller.ex#L233" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -289,7 +335,7 @@ GUIDES
     </a>
     <h1 class="signature" translate="no">get_policy_resource(_)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/controllers/v1/users_controller.ex#L166" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/controllers/v1/users_controller.ex#L242" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -311,7 +357,7 @@ GUIDES
     </a>
     <h1 class="signature" translate="no">index(conn, params)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/controllers/v1/users_controller.ex#L39" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/controllers/v1/users_controller.ex#L90" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -333,7 +379,7 @@ GUIDES
     </a>
     <h1 class="signature" translate="no">open_api_operation(action)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/controllers/v1/users_controller.ex#L32" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/controllers/v1/users_controller.ex#L79" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -348,6 +394,72 @@ GUIDES
           <pre translate="no"><span class="attribute">@spec</span> open_api_operation(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>()) :: <a href="https://hexdocs.pm/open_api_spex/3.19.1/OpenApiSpex.Operation.html#t:t/0">OpenApiSpex.Operation.t</a>()</pre>
 
       </div>
+
+
+  </section>
+</section>
+<section class="detail" id="patch/2">
+
+  <div class="detail-header">
+    <a href="#patch/2" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">patch(conn, params)</h1>
+
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/controllers/v1/users_controller.ex#L159" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="put/2">
+
+  <div class="detail-header">
+    <a href="#put/2" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">put(conn, params)</h1>
+
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/controllers/v1/users_controller.ex#L160" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="revoke_personal_access_token/2">
+
+  <div class="detail-header">
+    <a href="#revoke_personal_access_token/2" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">revoke_personal_access_token(conn, map)</h1>
+
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/controllers/v1/users_controller.ex#L222" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
 
 
   </section>
@@ -405,29 +517,7 @@ GUIDES
     </a>
     <h1 class="signature" translate="no">show(conn, map)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/controllers/v1/users_controller.ex#L87" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="update/2">
-
-  <div class="detail-header">
-    <a href="#update/2" class="detail-link" data-no-tooltip title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">update(conn, map)</h1>
-
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/controllers/v1/users_controller.ex#L130" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/controllers/v1/users_controller.ex#L149" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>

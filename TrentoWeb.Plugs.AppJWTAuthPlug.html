@@ -5,16 +5,16 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.34.2">
-    <meta name="project" content="Trento Web v2.4.0">
+    <meta name="project" content="Trento Web v2.5.0">
 
 
-    <title>TrentoWeb.Plugs.AppJWTAuthPlug — Trento Web v2.4.0</title>
+    <title>TrentoWeb.Plugs.AppJWTAuthPlug — Trento Web v2.5.0</title>
     <link rel="stylesheet" href="dist/html-elixir-F2VRIOKR.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-K7URE6B4.js"></script>
-    <script src="dist/sidebar_items-7A183BD1.js"></script>
+    <script src="dist/sidebar_items-4E929059.js"></script>
     <script src="docs_config.js"></script>
     <script async src="dist/html-YIPIRHGU.js"></script>
 
@@ -45,23 +45,23 @@
   <div class="sidebar-header">
     <div class="sidebar-projectInfo">
 
-        <a href="readme.html" class="sidebar-projectImage">
+        <a href="api-reference.html" class="sidebar-projectImage">
           <img src="assets/logo.svg" alt="Trento Web" />
         </a>
 
       <div>
-        <a href="readme.html" class="sidebar-projectName" translate="no">
+        <a href="api-reference.html" class="sidebar-projectName" translate="no">
 Trento Web
         </a>
         <div class="sidebar-projectVersion" translate="no">
-          v2.4.0
+          v2.5.0
         </div>
       </div>
     </div>
     <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
       <li>
         <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
-GUIDES
+Info
         </button>
       </li>
 
@@ -132,7 +132,7 @@ GUIDES
       </a>
 
     <span translate="no">TrentoWeb.Plugs.AppJWTAuthPlug</span> 
-    <small class="app-vsn" translate="no">(Trento Web v2.4.0)</small>
+    <small class="app-vsn" translate="no">(Trento Web v2.5.0)</small>
 
   </h1>
 
@@ -271,10 +271,10 @@ GUIDES
   <section class="docstring">
 
 <p>Configures the connection for Pow, and fetches user.</p><p>If no options have been passed to the plug, the existing configuration
-will be pulled with <a href="https://hexdocs.pm/pow/1.0.38/Pow.Plug.html#fetch_config/1"><code class="inline">Pow.Plug.fetch_config/1</code></a></p><p><code class="inline">:plug</code> is appended to the passed configuration, so the current plug will
+will be pulled with <a href="https://hexdocs.pm/pow/1.0.39/Pow.Plug.html#fetch_config/1"><code class="inline">Pow.Plug.fetch_config/1</code></a></p><p><code class="inline">:plug</code> is appended to the passed configuration, so the current plug will
 be used in any subsequent calls to create, update and delete user
 credentials from the connection. The configuration is then set for the
-conn with <a href="https://hexdocs.pm/pow/1.0.38/Pow.Plug.html#put_config/2"><code class="inline">Pow.Plug.put_config/2</code></a>.</p><p>If a user can't be fetched with <a href="https://hexdocs.pm/pow/1.0.38/Pow.Plug.html#current_user/2"><code class="inline">Pow.Plug.current_user/2</code></a>, <a href="#do_fetch/2"><code class="inline">do_fetch/2</code></a>
+conn with <a href="https://hexdocs.pm/pow/1.0.39/Pow.Plug.html#put_config/2"><code class="inline">Pow.Plug.put_config/2</code></a>.</p><p>If a user can't be fetched with <a href="https://hexdocs.pm/pow/1.0.39/Pow.Plug.html#current_user/2"><code class="inline">Pow.Plug.current_user/2</code></a>, <a href="#do_fetch/2"><code class="inline">do_fetch/2</code></a>
 will be called.</p>
   </section>
 </section>
@@ -310,7 +310,7 @@ will be called.</p>
     </a>
     <h1 class="signature" translate="no">delete(conn, config)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/plugs/app_jwt_auth_plug.ex#L84" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/plugs/app_jwt_auth_plug.ex#L85" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -342,7 +342,7 @@ will be called.</p>
 
   <section class="docstring">
 
-<p>Calls <a href="#create/3"><code class="inline">create/3</code></a> and assigns the current user.</p><p>The user is assigned to the conn with <a href="https://hexdocs.pm/pow/1.0.38/Pow.Plug.html#assign_current_user/3"><code class="inline">Pow.Plug.assign_current_user/3</code></a>.</p>
+<p>Calls <a href="#create/3"><code class="inline">create/3</code></a> and assigns the current user.</p><p>The user is assigned to the conn with <a href="https://hexdocs.pm/pow/1.0.39/Pow.Plug.html#assign_current_user/3"><code class="inline">Pow.Plug.assign_current_user/3</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="do_delete/2">
@@ -365,7 +365,7 @@ will be called.</p>
   <section class="docstring">
 
 <p>Calls <a href="#delete/2"><code class="inline">delete/2</code></a> and removes the current user assigned to the conn.</p><p>The user assigned is removed from the conn with
-<a href="https://hexdocs.pm/pow/1.0.38/Pow.Plug.html#assign_current_user/3"><code class="inline">Pow.Plug.assign_current_user/3</code></a>.</p>
+<a href="https://hexdocs.pm/pow/1.0.39/Pow.Plug.html#assign_current_user/3"><code class="inline">Pow.Plug.assign_current_user/3</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="do_fetch/2">
@@ -387,7 +387,7 @@ will be called.</p>
 
   <section class="docstring">
 
-<p>Calls <a href="#fetch/2"><code class="inline">fetch/2</code></a> and assigns the current user to the conn.</p><p>The user is assigned to the conn with <a href="https://hexdocs.pm/pow/1.0.38/Pow.Plug.html#assign_current_user/3"><code class="inline">Pow.Plug.assign_current_user/3</code></a>.</p>
+<p>Calls <a href="#fetch/2"><code class="inline">fetch/2</code></a> and assigns the current user to the conn.</p><p>The user is assigned to the conn with <a href="https://hexdocs.pm/pow/1.0.39/Pow.Plug.html#assign_current_user/3"><code class="inline">Pow.Plug.assign_current_user/3</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="fetch/2">
@@ -421,7 +421,7 @@ will be called.</p>
     </a>
     <h1 class="signature" translate="no">renew(conn, refresh_token)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/plugs/app_jwt_auth_plug.ex#L67" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento_web/plugs/app_jwt_auth_plug.ex#L68" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -433,7 +433,7 @@ will be called.</p>
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> renew(<a href="https://hexdocs.pm/plug/1.16.1/Plug.Conn.html#t:t/0">Plug.Conn.t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: {:ok, <a href="https://hexdocs.pm/plug/1.16.1/Plug.Conn.html#t:t/0">Plug.Conn.t</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
+          <pre translate="no"><span class="attribute">@spec</span> renew(<a href="https://hexdocs.pm/plug/1.18.1/Plug.Conn.html#t:t/0">Plug.Conn.t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: {:ok, <a href="https://hexdocs.pm/plug/1.18.1/Plug.Conn.html#t:t/0">Plug.Conn.t</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
 
       </div>
 

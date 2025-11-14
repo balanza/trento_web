@@ -5,16 +5,16 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.34.2">
-    <meta name="project" content="Trento Web v2.4.0">
+    <meta name="project" content="Trento Web v2.5.0">
 
 
-    <title>Trento.Hosts.Projections.HostReadModel — Trento Web v2.4.0</title>
+    <title>Trento.Hosts.Projections.HostReadModel — Trento Web v2.5.0</title>
     <link rel="stylesheet" href="dist/html-elixir-F2VRIOKR.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-K7URE6B4.js"></script>
-    <script src="dist/sidebar_items-7A183BD1.js"></script>
+    <script src="dist/sidebar_items-4E929059.js"></script>
     <script src="docs_config.js"></script>
     <script async src="dist/html-YIPIRHGU.js"></script>
 
@@ -45,23 +45,23 @@
   <div class="sidebar-header">
     <div class="sidebar-projectInfo">
 
-        <a href="readme.html" class="sidebar-projectImage">
+        <a href="api-reference.html" class="sidebar-projectImage">
           <img src="assets/logo.svg" alt="Trento Web" />
         </a>
 
       <div>
-        <a href="readme.html" class="sidebar-projectName" translate="no">
+        <a href="api-reference.html" class="sidebar-projectName" translate="no">
 Trento Web
         </a>
         <div class="sidebar-projectVersion" translate="no">
-          v2.4.0
+          v2.5.0
         </div>
       </div>
     </div>
     <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
       <li>
         <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
-GUIDES
+Info
         </button>
       </li>
 
@@ -132,7 +132,7 @@ GUIDES
       </a>
 
     <span translate="no">Trento.Hosts.Projections.HostReadModel</span> 
-    <small class="app-vsn" translate="no">(Trento Web v2.4.0)</small>
+    <small class="app-vsn" translate="no">(Trento Web v2.5.0)</small>
 
   </h1>
 
@@ -181,6 +181,16 @@ GUIDES
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#authorize_operation/3" data-no-tooltip translate="no">authorize_operation(action, host, params)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>See <a href="Trento.Operations.HostPolicy.html#authorize_operation/3"><code class="inline">Trento.Operations.HostPolicy.authorize_operation/3</code></a>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#changeset/2" data-no-tooltip translate="no">changeset(host, attrs)</a>
 
       </div>
@@ -209,7 +219,7 @@ GUIDES
     </a>
     <h1 class="signature" translate="no">t()</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/hosts/projections/host_read_model.ex#L18" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/hosts/projections/host_read_model.ex#L27" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -224,7 +234,12 @@ GUIDES
           <pre translate="no"><span class="attribute">@type</span> t() :: %Trento.Hosts.Projections.HostReadModel{
   __meta__: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   agent_version: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  application_instances: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  arch: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  cluster: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  cluster_host_status: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   cluster_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  database_instances: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   deregistered_at: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   fully_qualified_domain_name: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   health: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
@@ -241,6 +256,7 @@ GUIDES
   saptune_status: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   selected_checks: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   sles_subscriptions: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  systemd_units: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   tags: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   updated_at: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
 }</pre>
@@ -271,7 +287,7 @@ GUIDES
     </a>
     <h1 class="signature" translate="no">authorize(action, user, params)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/hosts/projections/host_read_model.ex#L16" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/hosts/projections/host_read_model.ex#L22" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -284,6 +300,28 @@ GUIDES
 <p>See <a href="Trento.Hosts.Policy.html#authorize/3"><code class="inline">Trento.Hosts.Policy.authorize/3</code></a>.</p>
   </section>
 </section>
+<section class="detail" id="authorize_operation/3">
+
+  <div class="detail-header">
+    <a href="#authorize_operation/3" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">authorize_operation(action, host, params)</h1>
+
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/hosts/projections/host_read_model.ex#L24" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>See <a href="Trento.Operations.HostPolicy.html#authorize_operation/3"><code class="inline">Trento.Operations.HostPolicy.authorize_operation/3</code></a>.</p>
+  </section>
+</section>
 <section class="detail" id="changeset/2">
 
   <div class="detail-header">
@@ -293,7 +331,7 @@ GUIDES
     </a>
     <h1 class="signature" translate="no">changeset(host, attrs)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/hosts/projections/host_read_model.ex#L51" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/hosts/projections/host_read_model.ex#L78" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -305,7 +343,7 @@ GUIDES
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> changeset(<a href="#t:t/0">t</a>() | <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> changeset(<a href="#t:t/0">t</a>() | <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()</pre>
 
       </div>
 

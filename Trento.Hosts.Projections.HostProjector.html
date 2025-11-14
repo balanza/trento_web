@@ -5,16 +5,16 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.34.2">
-    <meta name="project" content="Trento Web v2.4.0">
+    <meta name="project" content="Trento Web v2.5.0">
 
 
-    <title>Trento.Hosts.Projections.HostProjector — Trento Web v2.4.0</title>
+    <title>Trento.Hosts.Projections.HostProjector — Trento Web v2.5.0</title>
     <link rel="stylesheet" href="dist/html-elixir-F2VRIOKR.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-K7URE6B4.js"></script>
-    <script src="dist/sidebar_items-7A183BD1.js"></script>
+    <script src="dist/sidebar_items-4E929059.js"></script>
     <script src="docs_config.js"></script>
     <script async src="dist/html-YIPIRHGU.js"></script>
 
@@ -45,23 +45,23 @@
   <div class="sidebar-header">
     <div class="sidebar-projectInfo">
 
-        <a href="readme.html" class="sidebar-projectImage">
+        <a href="api-reference.html" class="sidebar-projectImage">
           <img src="assets/logo.svg" alt="Trento Web" />
         </a>
 
       <div>
-        <a href="readme.html" class="sidebar-projectName" translate="no">
+        <a href="api-reference.html" class="sidebar-projectName" translate="no">
 Trento Web
         </a>
         <div class="sidebar-projectVersion" translate="no">
-          v2.4.0
+          v2.5.0
         </div>
       </div>
     </div>
     <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
       <li>
         <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
-GUIDES
+Info
         </button>
       </li>
 
@@ -132,7 +132,7 @@ GUIDES
       </a>
 
     <span translate="no">Trento.Hosts.Projections.HostProjector</span> 
-    <small class="app-vsn" translate="no">(Trento Web v2.4.0)</small>
+    <small class="app-vsn" translate="no">(Trento Web v2.5.0)</small>
 
   </h1>
 
@@ -163,14 +163,6 @@ GUIDES
 
         <div class="summary-synopsis"><p>Provides a child specification to allow the event handler to be easily
 supervised.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#map_from_struct/1" data-no-tooltip translate="no">map_from_struct(struct)</a>
-
-      </div>
 
     </div>
 
@@ -253,31 +245,9 @@ process to go into hibernation after a period of inactivity.</p><h3 id="child_sp
   </a>
   <span class="text">Example</span>
 </h3>
-<pre><code class="makeup elixir" translate="no"><span class="nc">Supervisor</span><span class="o">.</span><span class="n">start_link</span><span class="p" data-group-id="3468516193-1">(</span><span class="p" data-group-id="3468516193-2">[</span><span class="w">
-  </span><span class="p" data-group-id="3468516193-3">{</span><span class="nc">ExampleHandler</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3468516193-4">[</span><span class="p" data-group-id="3468516193-4">]</span><span class="p" data-group-id="3468516193-3">}</span><span class="w">
-</span><span class="p" data-group-id="3468516193-2">]</span><span class="p">,</span><span class="w"> </span><span class="ss">strategy</span><span class="p">:</span><span class="w"> </span><span class="ss">:one_for_one</span><span class="p" data-group-id="3468516193-1">)</span></code></pre>
-  </section>
-</section>
-<section class="detail" id="map_from_struct/1">
-
-  <div class="detail-header">
-    <a href="#map_from_struct/1" class="detail-link" data-no-tooltip title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">map_from_struct(struct)</h1>
-
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/hosts/projections/host_projector.ex#L256" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
+<pre><code class="makeup elixir" translate="no"><span class="nc">Supervisor</span><span class="o">.</span><span class="n">start_link</span><span class="p" data-group-id="0700004789-1">(</span><span class="p" data-group-id="0700004789-2">[</span><span class="w">
+  </span><span class="p" data-group-id="0700004789-3">{</span><span class="nc">ExampleHandler</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0700004789-4">[</span><span class="p" data-group-id="0700004789-4">]</span><span class="p" data-group-id="0700004789-3">}</span><span class="w">
+</span><span class="p" data-group-id="0700004789-2">]</span><span class="p">,</span><span class="w"> </span><span class="ss">strategy</span><span class="p">:</span><span class="w"> </span><span class="ss">:one_for_one</span><span class="p" data-group-id="0700004789-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="schema_prefix/1">

@@ -5,16 +5,16 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.34.2">
-    <meta name="project" content="Trento Web v2.4.0">
+    <meta name="project" content="Trento Web v2.5.0">
 
 
-    <title>Trento.ActivityLog — Trento Web v2.4.0</title>
+    <title>Trento.ActivityLog — Trento Web v2.5.0</title>
     <link rel="stylesheet" href="dist/html-elixir-F2VRIOKR.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-K7URE6B4.js"></script>
-    <script src="dist/sidebar_items-7A183BD1.js"></script>
+    <script src="dist/sidebar_items-4E929059.js"></script>
     <script src="docs_config.js"></script>
     <script async src="dist/html-YIPIRHGU.js"></script>
 
@@ -45,23 +45,23 @@
   <div class="sidebar-header">
     <div class="sidebar-projectInfo">
 
-        <a href="readme.html" class="sidebar-projectImage">
+        <a href="api-reference.html" class="sidebar-projectImage">
           <img src="assets/logo.svg" alt="Trento Web" />
         </a>
 
       <div>
-        <a href="readme.html" class="sidebar-projectName" translate="no">
+        <a href="api-reference.html" class="sidebar-projectName" translate="no">
 Trento Web
         </a>
         <div class="sidebar-projectVersion" translate="no">
-          v2.4.0
+          v2.5.0
         </div>
       </div>
     </div>
     <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
       <li>
         <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
-GUIDES
+Info
         </button>
       </li>
 
@@ -132,7 +132,7 @@ GUIDES
       </a>
 
     <span translate="no">Trento.ActivityLog</span> 
-    <small class="app-vsn" translate="no">(Trento Web v2.4.0)</small>
+    <small class="app-vsn" translate="no">(Trento Web v2.5.0)</small>
 
   </h1>
 
@@ -157,14 +157,6 @@ GUIDES
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#change_retention_period/2" data-no-tooltip translate="no">change_retention_period(value, unit)</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
         <a href="#clear_expired_logs/0" data-no-tooltip translate="no">clear_expired_logs()</a>
 
       </div>
@@ -173,9 +165,31 @@ GUIDES
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#get_settings/0" data-no-tooltip translate="no">get_settings()</a>
+        <a href="#correlation_key/1" data-no-tooltip translate="no">correlation_key(ctx)</a>
 
       </div>
+
+        <div class="summary-synopsis"><p>See <code class="inline">Trento.ActivityLog.Correlations.correlation_key/1</code>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#expire_correlation_id/2" data-no-tooltip translate="no">expire_correlation_id(key, ttl)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>See <code class="inline">Trento.ActivityLog.Correlations.expire_correlation_id/2</code>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#get_correlation_id/1" data-no-tooltip translate="no">get_correlation_id(key)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>See <code class="inline">Trento.ActivityLog.Correlations.get_correlation_id/1</code>.</p></div>
 
     </div>
 
@@ -184,6 +198,26 @@ GUIDES
         <a href="#list_activity_log/2" data-no-tooltip translate="no">list_activity_log(params, include_all_log_types? \\ false)</a>
 
       </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#map_severity_integer_to_text/1" data-no-tooltip translate="no">map_severity_integer_to_text(int)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>See <code class="inline">Trento.ActivityLog.SeverityLevel.map_severity_integer_to_text/1</code>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#put_correlation_id/2" data-no-tooltip translate="no">put_correlation_id(key, value)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>See <code class="inline">Trento.ActivityLog.Correlations.put_correlation_id/2</code>.</p></div>
 
     </div>
 
@@ -200,36 +234,6 @@ GUIDES
       <span class="text">Functions</span>
     </h1>
     <div class="functions-list">
-<section class="detail" id="change_retention_period/2">
-
-  <div class="detail-header">
-    <a href="#change_retention_period/2" class="detail-link" data-no-tooltip title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">change_retention_period(value, unit)</h1>
-
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/activity_log.ex#L37" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> change_retention_period(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), <a href="Trento.ActivityLog.RetentionPeriodUnit.html#t:t/0">Trento.ActivityLog.RetentionPeriodUnit.t</a>()) ::
-  {:ok, <a href="Trento.ActivityLog.Settings.html#t:t/0">Trento.ActivityLog.Settings.t</a>()}
-  | {:error, :activity_log_settings_not_configured}</pre>
-
-      </div>
-
-
-  </section>
-</section>
 <section class="detail" id="clear_expired_logs/0">
 
   <div class="detail-header">
@@ -239,7 +243,7 @@ GUIDES
     </a>
     <h1 class="signature" translate="no">clear_expired_logs()</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/activity_log.ex#L56" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/activity_log.ex#L47" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -258,16 +262,16 @@ GUIDES
 
   </section>
 </section>
-<section class="detail" id="get_settings/0">
+<section class="detail" id="correlation_key/1">
 
   <div class="detail-header">
-    <a href="#get_settings/0" class="detail-link" data-no-tooltip title="Link to this function">
+    <a href="#correlation_key/1" class="detail-link" data-no-tooltip title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">get_settings()</h1>
+    <h1 class="signature" translate="no">correlation_key(ctx)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/activity_log.ex#L27" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/activity_log.ex#L57" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -277,13 +281,51 @@ GUIDES
 
   <section class="docstring">
 
-      <div class="specs">
+<p>See <code class="inline">Trento.ActivityLog.Correlations.correlation_key/1</code>.</p>
+  </section>
+</section>
+<section class="detail" id="expire_correlation_id/2">
 
-          <pre translate="no"><span class="attribute">@spec</span> get_settings() :: {:ok, <a href="Trento.ActivityLog.Settings.html#t:t/0">Trento.ActivityLog.Settings.t</a>()} | {:error, :not_found}</pre>
+  <div class="detail-header">
+    <a href="#expire_correlation_id/2" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">expire_correlation_id(key, ttl)</h1>
 
-      </div>
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/activity_log.ex#L60" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
 
 
+  </div>
+
+  <section class="docstring">
+
+<p>See <code class="inline">Trento.ActivityLog.Correlations.expire_correlation_id/2</code>.</p>
+  </section>
+</section>
+<section class="detail" id="get_correlation_id/1">
+
+  <div class="detail-header">
+    <a href="#get_correlation_id/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_correlation_id(key)</h1>
+
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/activity_log.ex#L58" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>See <code class="inline">Trento.ActivityLog.Correlations.get_correlation_id/1</code>.</p>
   </section>
 </section>
 <section class="detail" id="list_activity_log/2">
@@ -297,7 +339,7 @@ GUIDES
     </a>
     <h1 class="signature" translate="no">list_activity_log(params, include_all_log_types? \\ false)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/activity_log.ex#L66" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/activity_log.ex#L30" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -308,6 +350,50 @@ GUIDES
   <section class="docstring">
 
 
+  </section>
+</section>
+<section class="detail" id="map_severity_integer_to_text/1">
+
+  <div class="detail-header">
+    <a href="#map_severity_integer_to_text/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">map_severity_integer_to_text(int)</h1>
+
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/activity_log.ex#L55" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>See <code class="inline">Trento.ActivityLog.SeverityLevel.map_severity_integer_to_text/1</code>.</p>
+  </section>
+</section>
+<section class="detail" id="put_correlation_id/2">
+
+  <div class="detail-header">
+    <a href="#put_correlation_id/2" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">put_correlation_id(key, value)</h1>
+
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/activity_log.ex#L59" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>See <code class="inline">Trento.ActivityLog.Correlations.put_correlation_id/2</code>.</p>
   </section>
 </section>
 

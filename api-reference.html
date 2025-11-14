@@ -5,16 +5,16 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.34.2">
-    <meta name="project" content="Trento Web v2.4.0">
+    <meta name="project" content="Trento Web v2.5.0">
 
 
-    <title>API Reference — Trento Web v2.4.0</title>
+    <title>API Reference — Trento Web v2.5.0</title>
     <link rel="stylesheet" href="dist/html-elixir-F2VRIOKR.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-K7URE6B4.js"></script>
-    <script src="dist/sidebar_items-7A183BD1.js"></script>
+    <script src="dist/sidebar_items-4E929059.js"></script>
     <script src="docs_config.js"></script>
     <script async src="dist/html-YIPIRHGU.js"></script>
 
@@ -45,23 +45,23 @@
   <div class="sidebar-header">
     <div class="sidebar-projectInfo">
 
-        <a href="readme.html" class="sidebar-projectImage">
+        <a href="api-reference.html" class="sidebar-projectImage">
           <img src="assets/logo.svg" alt="Trento Web" />
         </a>
 
       <div>
-        <a href="readme.html" class="sidebar-projectName" translate="no">
+        <a href="api-reference.html" class="sidebar-projectName" translate="no">
 Trento Web
         </a>
         <div class="sidebar-projectVersion" translate="no">
-          v2.4.0
+          v2.5.0
         </div>
       </div>
     </div>
     <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
       <li>
         <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
-GUIDES
+Info
         </button>
       </li>
 
@@ -132,7 +132,7 @@ GUIDES
       </a>
 
 
-    <span>API Reference <small class="app-vsn">Trento Web v2.4.0</small></span>
+    <span>API Reference <small class="app-vsn">Trento Web v2.5.0</small></span>
   </h1>
 
 
@@ -219,6 +219,25 @@ GUIDES
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.ActivityLog.Correlations.TestCorrelations.html" translate="no">Trento.ActivityLog.Correlations.TestCorrelations</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>For usage in test suites where-in we want per test process isolation
+of the cache keys.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.ActivityLog.Correlations.UnscopedCorrelations.html" translate="no">Trento.ActivityLog.Correlations.UnscopedCorrelations</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>For usage in application code.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.ActivityLog.Logger.Parser.EventParser.html" translate="no">Trento.ActivityLog.Logger.Parser.EventParser</a>
 
   </div>
@@ -242,6 +261,15 @@ GUIDES
   </div>
 
     <div class="summary-synopsis"><p>Phoenix connection activity parser</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.ActivityLog.Logger.Parser.QueueEventParser.html" translate="no">Trento.ActivityLog.Logger.Parser.QueueEventParser</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Queue event activity parser</p></div>
 
 </div>
 <div class="summary-row">
@@ -278,15 +306,6 @@ GUIDES
   </div>
 
     <div class="summary-synopsis"><p>This module Represents the Activity Log Retention Time</p></div>
-
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="Trento.ActivityLog.Settings.html" translate="no">Trento.ActivityLog.Settings</a>
-
-  </div>
-
-    <div class="summary-synopsis"><p>ActivityLog Settings is the STI projection of activity log related settings</p></div>
 
 </div>
 <div class="summary-row">
@@ -405,7 +424,16 @@ SAP workloads.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="Trento.Clusters.Commands.RegisterClusterHost.html" translate="no">Trento.Clusters.Commands.RegisterClusterHost</a>
+    <a href="Trento.Clusters.Commands.RegisterOfflineClusterHost.html" translate="no">Trento.Clusters.Commands.RegisterOfflineClusterHost</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Command to register a host in a cluster when the host is offline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Clusters.Commands.RegisterOnlineClusterHost.html" translate="no">Trento.Clusters.Commands.RegisterOnlineClusterHost</a>
 
   </div>
 
@@ -450,6 +478,15 @@ SAP workloads.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Clusters.Enums.ClusterHostStatus.html" translate="no">Trento.Clusters.Enums.ClusterHostStatus</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Type that represents whether a host is online or offline in a cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Clusters.Enums.ClusterType.html" translate="no">Trento.Clusters.Enums.ClusterType</a>
 
   </div>
@@ -482,6 +519,15 @@ SAP workloads.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>Type that represents the supported HANA scenario types.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Clusters.Enums.SapInstanceResourceType.html" translate="no">Trento.Clusters.Enums.SapInstanceResourceType</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Type that represents the discovered type of a clustered SAP instance.</p></div>
 
 </div>
 <div class="summary-row">
@@ -536,6 +582,15 @@ SAP workloads.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>ClusterHealthChanged event</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Clusters.Events.ClusterHostStatusChanged.html" translate="no">Trento.Clusters.Events.ClusterHostStatusChanged</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>When a host's cluster status changes, from online to offline or vice versa,</p></div>
 
 </div>
 <div class="summary-row">
@@ -686,6 +741,15 @@ It contains the snapshot of the cluster aggregate that will be used to restore t
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Clusters.ValueObjects.ClusterResourceParent.html" translate="no">Trento.Clusters.ValueObjects.ClusterResourceParent</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Represents the parent of a cluster resource</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Clusters.ValueObjects.HanaClusterDetails.html" translate="no">Trento.Clusters.ValueObjects.HanaClusterDetails</a>
 
   </div>
@@ -718,6 +782,15 @@ It contains the snapshot of the cluster aggregate that will be used to restore t
   </div>
 
     <div class="summary-synopsis"><p>Host checks results value object</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Clusters.ValueObjects.SapInstance.html" translate="no">Trento.Clusters.ValueObjects.SapInstance</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Clustered SAP instance</p></div>
 
 </div>
 <div class="summary-row">
@@ -1120,6 +1193,13 @@ No changeset is defined here, since the schema is used to store append-only data
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Discovery.Payloads.Cluster.CibDiscoveryPayload.CibResources.Master.html" translate="no">Trento.Discovery.Payloads.Cluster.CibDiscoveryPayload.CibResources.Master</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Discovery.Payloads.Cluster.CibDiscoveryPayload.Configuration.html" translate="no">Trento.Discovery.Payloads.Cluster.CibDiscoveryPayload.Configuration</a>
 
   </div>
@@ -1332,6 +1412,15 @@ No changeset is defined here, since the schema is used to store append-only data
   </div>
 
     <div class="summary-synopsis"><p>Databases field payload</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Discovery.Payloads.SapSystemDiscoveryPayload.HdbnsutilSRstate.html" translate="no">Trento.Discovery.Payloads.SapSystemDiscoveryPayload.HdbnsutilSRstate</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>HdbnsutilSRstate field payload</p></div>
 
 </div>
 <div class="summary-row">
@@ -2162,6 +2251,15 @@ tests that require setting an event store.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Hosts.Enums.Architecture.html" translate="no">Trento.Hosts.Enums.Architecture</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Type that represents the supported architectures by our agent.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Hosts.Events.HeartbeatFailed.html" translate="no">Trento.Hosts.Events.HeartbeatFailed</a>
 
   </div>
@@ -2490,11 +2588,38 @@ and its calculated health is taken into account in host's aggregated health.</p>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Hosts.ValueObjects.SystemdUnit.html" translate="no">Trento.Hosts.ValueObjects.SystemdUnit</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Systemd unit value object</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Infrastructure.Alerting.Alerting.html" translate="no">Trento.Infrastructure.Alerting.Alerting</a>
 
   </div>
 
     <div class="summary-synopsis"><p>Provides a set of functions of Alerting related usecases.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Infrastructure.Catalog.AMQP.Consumer.html" translate="no">Trento.Infrastructure.Catalog.AMQP.Consumer</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>AMQP catalog consumer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Infrastructure.Catalog.AMQP.Processor.html" translate="no">Trento.Infrastructure.Catalog.AMQP.Processor</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>AMQP processor for the operations events</p></div>
 
 </div>
 <div class="summary-row">
@@ -2512,7 +2637,7 @@ and its calculated health is taken into account in host's aggregated health.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>AMQP consumer.</p></div>
+    <div class="summary-synopsis"><p>AMQP checks consumer.</p></div>
 
 </div>
 <div class="summary-row">
@@ -2522,6 +2647,15 @@ and its calculated health is taken into account in host's aggregated health.</p>
   </div>
 
     <div class="summary-synopsis"><p>AMQP processor for the checks execution events</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Infrastructure.Checks.AMQP.Publisher.html" translate="no">Trento.Infrastructure.Checks.AMQP.Publisher</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>AMQP checks publisher</p></div>
 
 </div>
 <div class="summary-row">
@@ -2610,6 +2744,17 @@ related to a database that has a new health state</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Infrastructure.Commanded.EventHandlers.SaptuneStatusUpdateEventHandler.html" translate="no">Trento.Infrastructure.Commanded.EventHandlers.SaptuneStatusUpdateEventHandler</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Event handler to update saptune status when application or HANA database instances are registered/deregistered.
+A host saptune health depends on SAP instances running on the host, so any update on that
+needs to be applied in the saptune state health.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Infrastructure.Commanded.EventHandlers.SoftwareUpdatesDiscoveryEventHandler.html" translate="no">Trento.Infrastructure.Commanded.EventHandlers.SoftwareUpdatesDiscoveryEventHandler</a>
 
   </div>
@@ -2682,6 +2827,15 @@ Here is where the actual integration with the external system happens and releva
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Infrastructure.Discovery.AMQP.Publisher.html" translate="no">Trento.Infrastructure.Discovery.AMQP.Publisher</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>AMQP discovery publisher</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Infrastructure.Messaging.html" translate="no">Trento.Infrastructure.Messaging</a>
 
   </div>
@@ -2700,11 +2854,56 @@ Here is where the actual integration with the external system happens and releva
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Infrastructure.Messaging.Adapter.AMQP.Consumer.html" translate="no">Trento.Infrastructure.Messaging.Adapter.AMQP.Consumer</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>AMQP consumer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Infrastructure.Messaging.Adapter.AMQP.Publisher.html" translate="no">Trento.Infrastructure.Messaging.Adapter.AMQP.Publisher</a>
 
   </div>
 
     <div class="summary-synopsis"><p>AMQP publisher.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Infrastructure.Operations.html" translate="no">Trento.Infrastructure.Operations</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Operations integration</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Infrastructure.Operations.AMQP.Consumer.html" translate="no">Trento.Infrastructure.Operations.AMQP.Consumer</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>AMQP operations consumer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Infrastructure.Operations.AMQP.Processor.html" translate="no">Trento.Infrastructure.Operations.AMQP.Processor</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>AMQP processor for the operations events</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Infrastructure.Operations.AMQP.Publisher.html" translate="no">Trento.Infrastructure.Operations.AMQP.Publisher</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>AMQP operations publisher</p></div>
 
 </div>
 <div class="summary-row">
@@ -2768,7 +2967,7 @@ Chart time series objects</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Behaviour of the SUMA authentication process.</p></div>
+    <div class="summary-synopsis"><p>Behaviour of the SUSE Multi-Linux Manager authentication process.</p></div>
 
 </div>
 <div class="summary-row">
@@ -2777,7 +2976,7 @@ Chart time series objects</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>State for the SUMA Software Updates discovery adapter</p></div>
+    <div class="summary-synopsis"><p>State for the SUSE Multi-Linux Manager Software Updates discovery adapter</p></div>
 
 </div>
 <div class="summary-row">
@@ -2786,7 +2985,7 @@ Chart time series objects</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>GenServer module to authenticate with SUMA</p></div>
+    <div class="summary-synopsis"><p>GenServer module to authenticate with SUSE Multi-Linux Manager</p></div>
 
 </div>
 <div class="summary-row">
@@ -2795,7 +2994,7 @@ Chart time series objects</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Mocked SUMA Software updates discovery adapter</p></div>
+    <div class="summary-synopsis"><p>Mocked SUSE Multi-Linux Manager Software updates discovery adapter</p></div>
 
 </div>
 <div class="summary-row">
@@ -2804,7 +3003,7 @@ Chart time series objects</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>SUMA Software updates discovery adapter</p></div>
+    <div class="summary-synopsis"><p>SUSE Multi-Linux Manager Software updates discovery adapter</p></div>
 
 </div>
 <div class="summary-row">
@@ -2813,7 +3012,7 @@ Chart time series objects</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>SUMA Http requests executor</p></div>
+    <div class="summary-synopsis"><p>SUSE Multi-Linux Manager Http requests executor</p></div>
 
 </div>
 <div class="summary-row">
@@ -2822,7 +3021,7 @@ Chart time series objects</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>SUMA API client supporting software updates discovery.</p></div>
+    <div class="summary-synopsis"><p>SUSE Multi-Linux Manager API client supporting software updates discovery.</p></div>
 
 </div>
 <div class="summary-row">
@@ -2832,6 +3031,141 @@ Chart time series objects</p></div>
   </div>
 
     <div class="summary-synopsis"><p>This test case makes sure that the messaging system is properly stubbed for tests where a defined behavior is sufficient.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Operations.ApplicationInstancePolicy.html" translate="no">Trento.Operations.ApplicationInstancePolicy</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>ApplicationInstanceReadModel operation policies</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Operations.ClusterPolicy.html" translate="no">Trento.Operations.ClusterPolicy</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>ClusterReadModel operation policies</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Operations.DatabaseInstancePolicy.html" translate="no">Trento.Operations.DatabaseInstancePolicy</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>DatabaseInstanceReadModel operation policies</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Operations.DatabasePolicy.html" translate="no">Trento.Operations.DatabasePolicy</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>DatabaseReadModel operation policies</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Operations.Enums.ClusterHostOperations.html" translate="no">Trento.Operations.Enums.ClusterHostOperations</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Cluster host operations</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Operations.Enums.ClusterOperations.html" translate="no">Trento.Operations.Enums.ClusterOperations</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Cluster operations</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Operations.Enums.DatabaseOperations.html" translate="no">Trento.Operations.Enums.DatabaseOperations</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Database operations</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Operations.Enums.HostOperations.html" translate="no">Trento.Operations.Enums.HostOperations</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Host operations</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Operations.Enums.SapInstanceOperations.html" translate="no">Trento.Operations.Enums.SapInstanceOperations</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>SAP instance operations</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Operations.Enums.SapSystemOperations.html" translate="no">Trento.Operations.Enums.SapSystemOperations</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>SAP system operations</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Operations.HostPolicy.html" translate="no">Trento.Operations.HostPolicy</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>HostReadModel operation policies</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Operations.PolicyBehaviour.html" translate="no">Trento.Operations.PolicyBehaviour</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Behaviour of the operations policies.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Operations.SapSystemPolicy.html" translate="no">Trento.Operations.SapSystemPolicy</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>SapSystemReadModel operation policies</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.PersonalAccessTokens.html" translate="no">Trento.PersonalAccessTokens</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Context for managing user personal access tokens.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.PersonalAccessTokens.PersonalAccessToken.html" translate="no">Trento.PersonalAccessTokens.PersonalAccessToken</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Represents a Personal Access Token for a user.</p></div>
 
 </div>
 <div class="summary-row">
@@ -3277,6 +3611,24 @@ deployed SAP systems, which is composed by the application layer.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Settings.ActivityLogSettings.html" translate="no">Trento.Settings.ActivityLogSettings</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>ActivityLogSettings is the STI projection of activity log related settings</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Settings.AlertingSettings.html" translate="no">Trento.Settings.AlertingSettings</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Schema and functions related to alerting settings.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Settings.ApiKeySettings.html" translate="no">Trento.Settings.ApiKeySettings</a>
 
   </div>
@@ -3317,7 +3669,7 @@ deployed SAP systems, which is composed by the application layer.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Schema for suse manager settings.</p></div>
+    <div class="summary-synopsis"><p>Schema for SUSE Multi-Linux Manager settings.</p></div>
 
 </div>
 <div class="summary-row">
@@ -3345,6 +3697,20 @@ deployed SAP systems, which is composed by the application layer.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>This is the schema used to store the results of the software updates discovery process.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.SoftwareUpdates.Discovery.DiscoveryResult.RelevantPatch.html" translate="no">Trento.SoftwareUpdates.Discovery.DiscoveryResult.RelevantPatch</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.SoftwareUpdates.Discovery.DiscoveryResult.UpgradablePackage.html" translate="no">Trento.SoftwareUpdates.Discovery.DiscoveryResult.UpgradablePackage</a>
+
+  </div>
 
 </div>
 <div class="summary-row">
@@ -3467,6 +3833,15 @@ check supported values and validate possible values</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Support.Helpers.AlertingSettingsHelper.html" translate="no">Trento.Support.Helpers.AlertingSettingsHelper</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Test helper functions for alerting settings.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Support.IntermediateEvent.html" translate="no">Trento.Support.IntermediateEvent</a>
 
   </div>
@@ -3491,6 +3866,24 @@ Requires events to be defined by the <code class="inline">defevent</code> macro.
   </div>
 
     <div class="summary-synopsis"><p>This module provides list utility functions</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Support.OperationsHelper.html" translate="no">Trento.Support.OperationsHelper</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Helper functions for operations</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Support.Protobuf.html" translate="no">Trento.Support.Protobuf</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Helper functions to use Protobuf mapping</p></div>
 
 </div>
 <div class="summary-row">
@@ -3634,11 +4027,29 @@ Uses Joken as jwt base library</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="TrentoWeb.Auth.PersonalAccessToken.html" translate="no">TrentoWeb.Auth.PersonalAccessToken</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>PersonalAccessToken represents a users' generated token.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="TrentoWeb.Auth.RefreshToken.html" translate="no">TrentoWeb.Auth.RefreshToken</a>
 
   </div>
 
     <div class="summary-synopsis"><p>  Refresh token is the module responsible for creating a proper jwt refresh token</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.Auth.Tokens.html" translate="no">TrentoWeb.Auth.Tokens</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Module responsible to deal with tokens concerns like introspection and validation.</p></div>
 
 </div>
 <div class="summary-row">
@@ -3734,11 +4145,29 @@ tests that require setting up a connection.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="TrentoWeb.OpenApi.All.ApiSpec.html" translate="no">TrentoWeb.OpenApi.All.ApiSpec</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>OpenApi all specification</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="TrentoWeb.OpenApi.ApiSpec.html" translate="no">TrentoWeb.OpenApi.ApiSpec</a>
 
   </div>
 
     <div class="summary-synopsis"><p>OpenApi specification entry point</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.OpenApi.Unversioned.ApiSpec.html" translate="no">TrentoWeb.OpenApi.Unversioned.ApiSpec</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>OpenApi specification entry point for unversioned endpoints</p></div>
 
 </div>
 <div class="summary-row">
@@ -3752,11 +4181,102 @@ tests that require setting up a connection.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="TrentoWeb.OpenApi.V1.Schema.Auth.html" translate="no">TrentoWeb.OpenApi.V1.Schema.Auth</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Authentication and Authorization Schemas for Trento Web API</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.OpenApi.V1.Schema.Auth.Credentials.html" translate="no">TrentoWeb.OpenApi.V1.Schema.Auth.Credentials</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Schema for successful authentication responses.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.OpenApi.V1.Schema.Auth.ExternalIdpCallback.html" translate="no">TrentoWeb.OpenApi.V1.Schema.Auth.ExternalIdpCallback</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Schema for external identity provider callback requests.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.OpenApi.V1.Schema.Auth.IntrospectTokenRequest.html" translate="no">TrentoWeb.OpenApi.V1.Schema.Auth.IntrospectTokenRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Schema for introspect token requests.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.OpenApi.V1.Schema.Auth.IntrospectedToken.html" translate="no">TrentoWeb.OpenApi.V1.Schema.Auth.IntrospectedToken</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Schema for introspected tokens.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.OpenApi.V1.Schema.Auth.LoginCredentials.html" translate="no">TrentoWeb.OpenApi.V1.Schema.Auth.LoginCredentials</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This schema defines the structure for authentication requests containing username,
+password, and optional TOTP code for secure login to the Trento platform.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.OpenApi.V1.Schema.Auth.RefreshTokenRequest.html" translate="no">TrentoWeb.OpenApi.V1.Schema.Auth.RefreshTokenRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Schema for refresh token requests.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.OpenApi.V1.Schema.Auth.RefreshedCredentials.html" translate="no">TrentoWeb.OpenApi.V1.Schema.Auth.RefreshedCredentials</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Schema for refreshed authentication results.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.OpenApi.V1.Schema.Auth.UserIDPCredentials.html" translate="no">TrentoWeb.OpenApi.V1.Schema.Auth.UserIDPCredentials</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Schema for successful IDP authentication responses.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="TrentoWeb.OpenApi.V1.Schema.BadRequest.html" translate="no">TrentoWeb.OpenApi.V1.Schema.BadRequest</a>
 
   </div>
 
-    <div class="summary-synopsis"><p>Bad Request</p></div>
+    <div class="summary-synopsis"><p>Bad Request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.OpenApi.V1.Schema.Conflict.html" translate="no">TrentoWeb.OpenApi.V1.Schema.Conflict</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>409 - Conflict.</p></div>
 
 </div>
 <div class="summary-row">
@@ -3765,7 +4285,7 @@ tests that require setting up a connection.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>403 - Forbidden</p></div>
+    <div class="summary-synopsis"><p>403 - Forbidden.</p></div>
 
 </div>
 <div class="summary-row">
@@ -3783,7 +4303,7 @@ tests that require setting up a connection.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>404 - Not Found</p></div>
+    <div class="summary-synopsis"><p>404 - Not Found.</p></div>
 
 </div>
 <div class="summary-row">
@@ -3792,7 +4312,7 @@ tests that require setting up a connection.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>412 - Precondition Failed</p></div>
+    <div class="summary-synopsis"><p>412 - Precondition Failed.</p></div>
 
 </div>
 <div class="summary-row">
@@ -3801,7 +4321,7 @@ tests that require setting up a connection.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>428 - Precondition Required</p></div>
+    <div class="summary-synopsis"><p>428 - Precondition Required.</p></div>
 
 </div>
 <div class="summary-row">
@@ -3819,7 +4339,7 @@ tests that require setting up a connection.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>401 - Unauthorized</p></div>
+    <div class="summary-synopsis"><p>401 - Unauthorized.</p></div>
 
 </div>
 <div class="summary-row">
@@ -3828,7 +4348,7 @@ tests that require setting up a connection.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>422 - Unprocessable Entity</p></div>
+    <div class="summary-synopsis"><p>422 - Unprocessable Entity.</p></div>
 
 </div>
 <div class="summary-row">
@@ -3933,6 +4453,16 @@ The current user is replaced with the stateful user for subsequent plugs</p></di
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="TrentoWeb.Plugs.OperationsPolicyPlug.html" translate="no">TrentoWeb.Plugs.OperationsPolicyPlug</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This plug is responsible for authorizing operations. It falls back to <code class="inline">{:error, :forbidden}</code> if
+the resource is not authorized.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="TrentoWeb.Router.html" translate="no">TrentoWeb.Router</a>
 
   </div>
@@ -3950,6 +4480,15 @@ The current user is replaced with the stateful user for subsequent plugs</p></di
     <a href="TrentoWeb.SessionJSON.html" translate="no">TrentoWeb.SessionJSON</a>
 
   </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.TokensCase.html" translate="no">TrentoWeb.TokensCase</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Custom tokens used in tests to cover edge cases.</p></div>
 
 </div>
 <div class="summary-row">
@@ -4090,14 +4629,7 @@ to receive personal broadcasts</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="TrentoWeb.V1.InstallationController.html" translate="no">TrentoWeb.V1.InstallationController</a>
-
-  </div>
-
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="TrentoWeb.V1.InstallationJSON.html" translate="no">TrentoWeb.V1.InstallationJSON</a>
+    <a href="TrentoWeb.V1.PersonalAccessTokensController.html" translate="no">TrentoWeb.V1.PersonalAccessTokensController</a>
 
   </div>
 
@@ -4223,6 +4755,15 @@ to receive personal broadcasts</p></div>
     <div class="summary">
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Mix.Tasks.ClearAlertingSettings.html" translate="no">mix clear_alerting_settings</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Delete the record for alerting settings from the DB.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Mix.Tasks.DumpScenario.html" translate="no">mix dump_scenario</a>
 
   </div>
@@ -4261,12 +4802,12 @@ to receive personal broadcasts</p></div>
   </div>
   <div class="bottom-actions-item">
 
-      <a href="readme.html" class="bottom-actions-button" rel="next">
+      <a href="changelog.html" class="bottom-actions-button" rel="next">
         <span class="subheader">
           Next Page →
         </span>
         <span class="title">
-Trento
+Changelog
         </span>
       </a>
 
