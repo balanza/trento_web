@@ -195,16 +195,25 @@ describe('UserForm', () => {
       />
     );
 
-    await user.type(screen.getByPlaceholderText('Enter full name'), fullname);
-    await user.type(screen.getByPlaceholderText('Enter email address'), email);
-    await user.type(screen.getByPlaceholderText('Enter username'), username);
-    await user.type(screen.getByPlaceholderText('Enter password'), password);
-    await user.type(screen.getByPlaceholderText('Re-enter password'), password);
+    // Use paste() instead of type() for the text fields. Random fixtures
+    // (especially long timezones like "America/Argentina/ComodRivadavia")
+    // can push the cumulative per-keystroke typing time past the default 5s
+    // jest timeout, causing the test to fail intermittently.
+    await user.click(screen.getByPlaceholderText('Enter full name'));
+    await user.paste(fullname);
+    await user.click(screen.getByPlaceholderText('Enter email address'));
+    await user.paste(email);
+    await user.click(screen.getByPlaceholderText('Enter username'));
+    await user.paste(username);
+    await user.click(screen.getByPlaceholderText('Enter password'));
+    await user.paste(password);
+    await user.click(screen.getByPlaceholderText('Re-enter password'));
+    await user.paste(password);
     const timezoneSelectorInput = screen.getByRole('combobox', {
       name: 'Timezone',
     });
     await user.click(timezoneSelectorInput);
-    await user.type(timezoneSelectorInput, timezone);
+    await user.paste(timezone);
     await user.click(await screen.findByText(getTimezoneLabel(timezone)));
 
     await user.click(screen.getByRole('button', { name: 'Save' }));
