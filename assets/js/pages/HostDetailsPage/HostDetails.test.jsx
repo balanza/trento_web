@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import React from 'react';
-import { act, screen, waitFor, within } from '@testing-library/react';
+import { act, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import 'intersection-observer';
 import '@testing-library/jest-dom';
@@ -441,9 +441,11 @@ describe('HostDetails component', () => {
 
   describe('last execution overview', () => {
     it('should be displayed when lastExecution has data inside', () => {
-      const passingCount = faker.number.int(100);
-      const warningCount = faker.number.int(100);
-      const criticalCount = faker.number.int(100);
+      // Use distinct values to avoid `getByText` matching multiple elements
+      // when faker happens to generate the same number for two of the counts.
+      const passingCount = 11;
+      const warningCount = 22;
+      const criticalCount = 33;
 
       const lastExecution = {
         data: {
@@ -464,6 +466,8 @@ describe('HostDetails component', () => {
       );
 
       expect(screen.getByText(passingCount)).toBeInTheDocument();
+      expect(screen.getByText(warningCount)).toBeInTheDocument();
+      expect(screen.getByText(criticalCount)).toBeInTheDocument();
       expect(screen.getByText('11 Jan 2024, 13:30:00')).toBeInTheDocument();
     });
 
@@ -527,7 +531,9 @@ describe('HostDetails component', () => {
 
         await user.click(operationsButton);
 
-        const menuItem = screen.getByRole('menuitem', {
+        // Use findByRole because the headless-ui v2 menu mounts/positions
+        // its items asynchronously after the click resolves.
+        const menuItem = await screen.findByRole('menuitem', {
           name: menuEntry,
         });
 
@@ -560,9 +566,9 @@ describe('HostDetails component', () => {
       });
       await user.click(operationsButton);
 
-      await waitFor(() =>
-        expect(screen.getByRole('menuitem', { name: operation })).toBeDisabled()
-      );
+      // findByRole reliably waits for the headless-ui v2 menu portal to mount.
+      const menuItem = await screen.findByRole('menuitem', { name: operation });
+      expect(menuItem).toBeDisabled();
     });
 
     it.each`
@@ -685,7 +691,8 @@ describe('HostDetails component', () => {
 
         await user.click(operationsButton);
 
-        const menuButton = screen.getByRole('menuitem', {
+        // findByRole reliably waits for the headless-ui v2 menu portal to mount.
+        const menuButton = await screen.findByRole('menuitem', {
           name: operationName,
         });
 
@@ -721,7 +728,8 @@ describe('HostDetails component', () => {
       });
       await user.click(operationsButton);
 
-      const rebootMenuItem = screen.getByRole('menuitem', {
+      // findByRole reliably waits for the headless-ui v2 menu portal to mount.
+      const rebootMenuItem = await screen.findByRole('menuitem', {
         name: 'Reboot Host',
       });
 
