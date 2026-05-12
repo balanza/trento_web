@@ -19,15 +19,15 @@ describe('Label Component', () => {
 
   it('should display an info tooltip if specified', async () => {
     const user = userEvent.setup();
-    const labelContent = faker.word.noun();
-    const labelInfoContent = faker.word.noun();
+    const labelContent = `label-${faker.string.uuid()}`;
+    const labelInfoContent = `info-${faker.string.uuid()}`;
 
     render(<Label info={labelInfoContent}>{labelContent}</Label>);
 
     const icon = screen.getByTestId('eos-svg-component');
     await act(async () => user.hover(icon));
 
-    expect(screen.getByText(labelInfoContent)).toBeVisible();
+    expect(await screen.findByText(labelInfoContent)).toBeVisible();
   });
 
   it('should display an asterisk for required fields', () => {
