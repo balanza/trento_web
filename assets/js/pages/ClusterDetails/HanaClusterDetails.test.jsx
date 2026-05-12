@@ -95,8 +95,15 @@ describe('HanaClusterDetails component', () => {
       details,
     } = clusterFactory.build();
 
-    const { nodes } = details;
-    const registeredClusterNode = nodes[0];
+    // Force unique, deterministic node names to avoid the small but non-zero
+    // chance that faker.animal.dog() produces the same name for both nodes,
+    // which would cause getByText below to match more than one element.
+    const uniqueNodes = details.nodes.map((node, index) => ({
+      ...node,
+      name: `registered-cluster-node-${index}`,
+    }));
+    const detailsWithUniqueNodes = { ...details, nodes: uniqueNodes };
+    const registeredClusterNode = uniqueNodes[0];
 
     const host = hostFactory.build({
       hostname: registeredClusterNode.name,
@@ -112,7 +119,7 @@ describe('HanaClusterDetails component', () => {
         clusterSids={[sid]}
         provider={provider}
         sapSystems={[]}
-        details={details}
+        details={detailsWithUniqueNodes}
         lastExecution={null}
       />
     );
