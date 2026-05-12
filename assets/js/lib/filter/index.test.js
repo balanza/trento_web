@@ -28,10 +28,14 @@ describe('search', () => {
   });
 
   it('should not match not included words', () => {
-    const words = faker.word.words(2).split(' ');
+    // Use deterministic, mutually non-substring words to avoid faker
+    // occasionally producing pairs like ("afford", "for") or duplicates,
+    // where words[0] would actually contain words[1].
+    const haystack = 'alpha';
+    const needle = 'omega';
 
-    expect(containsSubstring(words[0], words[1])).toBe(false);
-    expect(containsSubstring('', words[1])).toBe(false);
+    expect(containsSubstring(haystack, needle)).toBe(false);
+    expect(containsSubstring('', needle)).toBe(false);
   });
 
   it('should match unicode in different forms', () => {
