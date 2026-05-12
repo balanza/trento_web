@@ -3,16 +3,19 @@
 
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { faker } from '@faker-js/faker';
 
 import { APPLICATION_TYPE, DATABASE_TYPE } from '@lib/model/sapSystems';
-import { generateSid } from '@lib/test-utils/factories';
 
 import DeregistrationModal from '.';
 
 describe('Deregistration Modal component', () => {
   it('should render a host deregistration modal correctly', async () => {
-    const hostname = faker.person.firstName();
+    // Use a deterministic hostname that cannot appear as a substring in the
+    // modal body, button labels, or any other rendered text. Random faker
+    // names like "Will", "Trent", "Al" or "Ed" used to collide with words in
+    // the body ("will", "Trento", "all", "discovered"), causing
+    // `findByText(hostname, { exact: false })` to match multiple nodes.
+    const hostname = 'host-xyz-1234567890';
 
     render(
       <DeregistrationModal
@@ -37,8 +40,13 @@ describe('Deregistration Modal component', () => {
   });
 
   it('should render an application instance deregistration modal correctly', async () => {
-    const sid = generateSid();
-    const instanceNumber = '00';
+    // Use deterministic identifiers that cannot collide with any substring of
+    // the rendered body text. A randomly generated 3-char alphanumeric sid
+    // (e.g. "ASC", "SCS", "TIO") would occasionally appear inside the body
+    // string ("ASCS instance", "Application", "deregistration"), making
+    // `findByText(sid, { exact: false })` match multiple nodes intermittently.
+    const sid = '999';
+    const instanceNumber = '88';
 
     render(
       <DeregistrationModal
@@ -63,8 +71,11 @@ describe('Deregistration Modal component', () => {
   });
 
   it('should render a database instance deregistration modal correctly', async () => {
-    const sid = generateSid();
-    const instanceNumber = '00';
+    // See note in the application-instance test above; the same flakiness
+    // applied here when the random sid happened to be a substring of the
+    // modal body (e.g. "ATA" in "database", "PRI" in "Primary").
+    const sid = '777';
+    const instanceNumber = '88';
 
     render(
       <DeregistrationModal
