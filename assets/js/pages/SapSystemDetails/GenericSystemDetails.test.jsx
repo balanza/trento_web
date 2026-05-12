@@ -42,11 +42,14 @@ import {
 } from './sapOperations';
 
 expect.extend({
-  toHaveMenuitem(operation, options) {
+  async toHaveMenuitem(operation, options) {
     const enabled = options?.enabled ?? false;
     let opItem;
     try {
-      opItem = screen.getByRole('menuitem', { name: operation });
+      // Use findByRole to wait for the menu (HeadlessUI Menu opens via
+      // floating-ui effects, so the menuitem may not be in the DOM
+      // synchronously after the click handler resolves).
+      opItem = await screen.findByRole('menuitem', { name: operation });
     } catch (error) {
       return {
         pass: false,
@@ -65,10 +68,10 @@ expect.extend({
     };
   },
 
-  toBeRunning(operation) {
+  async toBeRunning(operation) {
     let opItem;
     try {
-      opItem = screen.getByRole('menuitem', { name: operation });
+      opItem = await screen.findByRole('menuitem', { name: operation });
     } catch (error) {
       return {
         pass: false,
@@ -480,7 +483,7 @@ describe('GenericSystemDetails', () => {
 
       await user.click(screen.getByRole('button', { name: 'Operations' }));
 
-      expect(operation).toHaveMenuitem({ enabled });
+      await expect(operation).toHaveMenuitem({ enabled });
     }
   );
 
@@ -533,7 +536,7 @@ describe('GenericSystemDetails', () => {
 
       await user.click(screen.getByRole('button', { name: 'Operations' }));
 
-      expect(operation).toHaveMenuitem({ enabled });
+      await expect(operation).toHaveMenuitem({ enabled });
     }
   );
 
@@ -618,11 +621,11 @@ describe('GenericSystemDetails', () => {
 
       await user.click(siteOpButton1);
 
-      expect(operation).toHaveMenuitem({ enabled });
+      await expect(operation).toHaveMenuitem({ enabled });
 
       await user.click(siteOpButton2);
 
-      const opItem2 = screen.getByRole('menuitem', {
+      const opItem2 = await screen.findByRole('menuitem', {
         name: operation,
       });
 
@@ -684,7 +687,7 @@ describe('GenericSystemDetails', () => {
 
       await user.click(opButton);
 
-      expect(menuItemText).toBeRunning(operation);
+      await expect(menuItemText).toBeRunning(operation);
     }
   );
 
@@ -750,7 +753,7 @@ describe('GenericSystemDetails', () => {
 
       await user.click(screen.getByRole('button', { name: 'Operations' }));
 
-      expect(menuItemText).toBeRunning(operation);
+      await expect(menuItemText).toBeRunning(operation);
     }
   );
 
@@ -824,10 +827,10 @@ describe('GenericSystemDetails', () => {
       const siteOpButton2 = getByRoleSite2('button');
 
       await user.click(siteOpButton1);
-      expect(menuItemText).toBeRunning(operation);
+      await expect(menuItemText).toBeRunning(operation);
 
       await user.click(siteOpButton2);
-      expect(menuItemText).toHaveMenuitem({ enabled: false });
+      await expect(menuItemText).toHaveMenuitem({ enabled: false });
     }
   );
 
@@ -879,8 +882,8 @@ describe('GenericSystemDetails', () => {
 
       await user.click(opButton);
 
-      expect('Start instance').toHaveMenuitem({ enabled: false });
-      expect('Stop instance').toHaveMenuitem({ enabled: false });
+      await expect('Start instance').toHaveMenuitem({ enabled: false });
+      await expect('Stop instance').toHaveMenuitem({ enabled: false });
     }
   );
 
@@ -921,8 +924,8 @@ describe('GenericSystemDetails', () => {
     const opButton = screen.getByRole('button', { name: 'Operations' });
     await user.click(opButton);
 
-    expect('Start system').toHaveMenuitem({ enabled: false });
-    expect('Stop system').toHaveMenuitem({ enabled: false });
+    await expect('Start system').toHaveMenuitem({ enabled: false });
+    await expect('Stop system').toHaveMenuitem({ enabled: false });
   });
 
   it('should show forbidden operation modal', async () => {
@@ -1223,7 +1226,7 @@ describe('GenericSystemDetails', () => {
 
         await user.click(opButton);
 
-        expect(label).toHaveMenuitem({ enabled: !forbidden });
+        await expect(label).toHaveMenuitem({ enabled: !forbidden });
       }
     );
 
@@ -1329,7 +1332,7 @@ describe('GenericSystemDetails', () => {
 
         await user.click(screen.getByRole('button', { name: 'Operations' }));
 
-        expect(label).toHaveMenuitem({ enabled: !forbidden });
+        await expect(label).toHaveMenuitem({ enabled: !forbidden });
       }
     );
 
@@ -1396,7 +1399,7 @@ describe('GenericSystemDetails', () => {
         const siteOpButton = getByRole('button');
         await user.click(siteOpButton);
 
-        expect(label).toHaveMenuitem({ enabled: !forbidden });
+        await expect(label).toHaveMenuitem({ enabled: !forbidden });
       }
     );
   });
