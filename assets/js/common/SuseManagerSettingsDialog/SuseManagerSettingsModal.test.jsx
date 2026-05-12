@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { faker } from '@faker-js/faker';
-import { act, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
@@ -79,10 +79,14 @@ describe('SuseManagerSettingsModal component', () => {
       'Starts with -----BEGIN CERTIFICATE-----'
     );
 
-    await user.type(urlInput, url);
-    await user.type(passwordInput, password);
-    await user.type(certificateInput, certificate);
-    await user.type(userInput, username);
+    // Use fireEvent.change to set the values atomically. userEvent.type
+    // dispatches one keystroke per character with a re-render between each,
+    // which makes this test exceed the 5s timeout when faker.lorem.text()
+    // produces a long certificate string (it can return 500+ characters).
+    fireEvent.change(urlInput, { target: { value: url } });
+    fireEvent.change(passwordInput, { target: { value: password } });
+    fireEvent.change(certificateInput, { target: { value: certificate } });
+    fireEvent.change(userInput, { target: { value: username } });
 
     await user.click(screen.getByText('Save Settings'));
 
@@ -118,11 +122,14 @@ describe('SuseManagerSettingsModal component', () => {
       'Enter a SUSE Manager username'
     );
 
-    await user.clear(urlInput);
-    await user.clear(userInput);
-
-    await user.type(urlInput, url);
-    await user.type(userInput, username);
+    // Use fireEvent.change instead of user.clear() + user.type(): when
+    // typing chars one at a time on a controlled input pre-populated with
+    // initialUrl/initialUsername, the per-character re-renders raced with
+    // the cursor position tracking inside userEvent, occasionally producing
+    // an interleaved string ("hretwt..." instead of "https://..."). A
+    // single change event replaces the value atomically.
+    fireEvent.change(urlInput, { target: { value: url } });
+    fireEvent.change(userInput, { target: { value: username } });
 
     await user.click(screen.getByText('Save Settings'));
 
