@@ -5,16 +5,16 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.34.2">
-    <meta name="project" content="Trento Web v2.5.0">
+    <meta name="project" content="Trento Web v3.0.0">
 
 
-    <title>API Reference — Trento Web v2.5.0</title>
+    <title>API Reference — Trento Web v3.0.0</title>
     <link rel="stylesheet" href="dist/html-elixir-F2VRIOKR.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-K7URE6B4.js"></script>
-    <script src="dist/sidebar_items-4E929059.js"></script>
+    <script src="dist/sidebar_items-A0BE77AF.js"></script>
     <script src="docs_config.js"></script>
     <script async src="dist/html-YIPIRHGU.js"></script>
 
@@ -54,7 +54,7 @@
 Trento Web
         </a>
         <div class="sidebar-projectVersion" translate="no">
-          v2.5.0
+          v3.0.0
         </div>
       </div>
     </div>
@@ -132,7 +132,7 @@ Info
       </a>
 
 
-    <span>API Reference <small class="app-vsn">Trento Web v2.5.0</small></span>
+    <span>API Reference <small class="app-vsn">Trento Web v3.0.0</small></span>
   </h1>
 
 
@@ -161,6 +161,42 @@ Info
   </div>
 
     <div class="summary-synopsis"><p>This module defines an event handler that fails.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.AI.html" translate="no">Trento.AI</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The <a href="Trento.AI.html"><code class="inline">Trento.AI</code></a> module provides functions to interact with the AI features of the Trento application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.AI.ApplicationConfigLoader.html" translate="no">Trento.AI.ApplicationConfigLoader</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This module is responsible for loading the AI application configuration and providing access to it.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.AI.Configurations.html" translate="no">Trento.AI.Configurations</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This module is responsible for managing user AI configurations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.AI.LLMRegistry.html" translate="no">Trento.AI.LLMRegistry</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This module is responsible for managing the registry of available LLM providers and their models.</p></div>
 
 </div>
 <div class="summary-row">
@@ -366,11 +402,29 @@ Derived from Commanded.AggregateCase</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Charts.Hosts.HostFilesystemChart.html" translate="no">Trento.Charts.Hosts.HostFilesystemChart</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Represents filesystem metrics for a host</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Charts.Hosts.HostMemoryChart.html" translate="no">Trento.Charts.Hosts.HostMemoryChart</a>
 
   </div>
 
     <div class="summary-synopsis"><p>Represents Memory chart data for a single host</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Charts.SampledMetric.html" translate="no">Trento.Charts.SampledMetric</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Represents metric and its sample at a given time</p></div>
 
 </div>
 <div class="summary-row">
@@ -483,6 +537,17 @@ SAP workloads.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>Type that represents whether a host is online or offline in a cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Clusters.Enums.ClusterState.html" translate="no">Trento.Clusters.Enums.ClusterState</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Type that represents the cluster state.
+Values are coming from pacemaker directly:
+<a href="https://github.com/ClusterLabs/pacemaker/blob/main/daemons/controld/controld_fsa.h#L23">https://github.com/ClusterLabs/pacemaker/blob/main/daemons/controld/controld_fsa.h#L23</a></p></div>
 
 </div>
 <div class="summary-row">
@@ -1201,6 +1266,20 @@ No changeset is defined here, since the schema is used to store append-only data
 <div class="summary-row">
   <div class="summary-signature">
     <a href="Trento.Discovery.Payloads.Cluster.CibDiscoveryPayload.Configuration.html" translate="no">Trento.Discovery.Payloads.Cluster.CibDiscoveryPayload.Configuration</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Discovery.Payloads.Cluster.CibDiscoveryPayload.Configuration.Constraints.html" translate="no">Trento.Discovery.Payloads.Cluster.CibDiscoveryPayload.Configuration.Constraints</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Discovery.Payloads.Cluster.CibDiscoveryPayload.Configuration.Constraints.RscLocation.html" translate="no">Trento.Discovery.Payloads.Cluster.CibDiscoveryPayload.Configuration.Constraints.RscLocation</a>
 
   </div>
 
@@ -2260,6 +2339,15 @@ tests that require setting an event store.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Hosts.Enums.PrometheusMode.html" translate="no">Trento.Hosts.Enums.PrometheusMode</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Type that represents the Prometheus mode for a host.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Hosts.Events.HeartbeatFailed.html" translate="no">Trento.Hosts.Events.HeartbeatFailed</a>
 
   </div>
@@ -2827,6 +2915,24 @@ Here is where the actual integration with the external system happens and releva
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Infrastructure.ComponentVersions.html" translate="no">Trento.Infrastructure.ComponentVersions</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Fetches version information from all platform components.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Infrastructure.ComponentVersions.Gen.html" translate="no">Trento.Infrastructure.ComponentVersions.Gen</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Behaviour for fetching component versions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Infrastructure.Discovery.AMQP.Publisher.html" translate="no">Trento.Infrastructure.Discovery.AMQP.Publisher</a>
 
   </div>
@@ -2917,6 +3023,15 @@ Here is where the actual integration with the external system happens and releva
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Infrastructure.Prometheus.Adapter.HttpClient.html" translate="no">Trento.Infrastructure.Prometheus.Adapter.HttpClient</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>HTTP client behaviour for Prometheus API calls.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Infrastructure.Prometheus.ChartIntegration.html" translate="no">Trento.Infrastructure.Prometheus.ChartIntegration</a>
 
   </div>
@@ -2945,6 +3060,15 @@ Chart time series objects</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Trento.Infrastructure.Prometheus.PromQL.html" translate="no">Trento.Infrastructure.Prometheus.PromQL</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>PromQL query manipulation utilities.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Trento.Infrastructure.Prometheus.PrometheusApi.html" translate="no">Trento.Infrastructure.Prometheus.PrometheusApi</a>
 
   </div>
@@ -2959,6 +3083,24 @@ Chart time series objects</p></div>
   </div>
 
     <div class="summary-synopsis"><p>PrometheusSamples represent a prometheus sample returned from a range query, having a unix timestamp and a float value</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Infrastructure.SSO.html" translate="no">Trento.Infrastructure.SSO</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides a set of functions related to SSO (Single Sign On).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Trento.Infrastructure.SSO.Config.html" translate="no">Trento.Infrastructure.SSO.Config</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides a set of functions related to SSO configuration.</p></div>
 
 </div>
 <div class="summary-row">
@@ -4463,6 +4605,15 @@ the resource is not authorized.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="TrentoWeb.Plugs.UpdateLastLoginAtPlug.html" translate="no">TrentoWeb.Plugs.UpdateLastLoginAtPlug</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This plug updates the last login at value in a successful login attempt.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="TrentoWeb.Router.html" translate="no">TrentoWeb.Router</a>
 
   </div>
@@ -4504,6 +4655,20 @@ to receive personal broadcasts</p></div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="TrentoWeb.UserSocket.html" translate="no">TrentoWeb.UserSocket</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.V1.AIConfigurationController.html" translate="no">TrentoWeb.V1.AIConfigurationController</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TrentoWeb.V1.AIConfigurationJSON.html" translate="no">TrentoWeb.V1.AIConfigurationJSON</a>
 
   </div>
 

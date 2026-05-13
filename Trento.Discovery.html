@@ -5,16 +5,16 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.34.2">
-    <meta name="project" content="Trento Web v2.5.0">
+    <meta name="project" content="Trento Web v3.0.0">
 
 
-    <title>Trento.Discovery — Trento Web v2.5.0</title>
+    <title>Trento.Discovery — Trento Web v3.0.0</title>
     <link rel="stylesheet" href="dist/html-elixir-F2VRIOKR.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-K7URE6B4.js"></script>
-    <script src="dist/sidebar_items-4E929059.js"></script>
+    <script src="dist/sidebar_items-A0BE77AF.js"></script>
     <script src="docs_config.js"></script>
     <script async src="dist/html-YIPIRHGU.js"></script>
 
@@ -54,7 +54,7 @@
 Trento Web
         </a>
         <div class="sidebar-projectVersion" translate="no">
-          v2.5.0
+          v3.0.0
         </div>
       </div>
     </div>
@@ -126,13 +126,13 @@ Info
 <div id="top-content">
   <h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/discovery.ex#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/discovery.ex#L4" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
 
     <span translate="no">Trento.Discovery</span> 
-    <small class="app-vsn" translate="no">(Trento Web v2.5.0)</small>
+    <small class="app-vsn" translate="no">(Trento Web v3.0.0)</small>
 
   </h1>
 
@@ -202,21 +202,11 @@ Store the event in the discovery events log for auditing purposes and dispatch t
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#prune_discarded_discovery_events/1" data-no-tooltip translate="no">prune_discarded_discovery_events(days)</a>
+        <a href="#prune_discovery_events/1" data-no-tooltip translate="no">prune_discovery_events(days)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Prune the discarded discovery events log by removing the events older than the given number of days.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#prune_events/1" data-no-tooltip translate="no">prune_events(days)</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Prune the discovery events log by removing the events older than the given number of days.</p></div>
+        <div class="summary-synopsis"><p>Prune all discovery events (regular and discarded) older than the given number of days.</p></div>
 
     </div>
 
@@ -272,7 +262,7 @@ Store the event in the discovery events log for auditing purposes and dispatch t
     </a>
     <h1 class="signature" translate="no">command()</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/discovery.ex#L30" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/discovery.ex#L33" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -312,7 +302,7 @@ Store the event in the discovery events log for auditing purposes and dispatch t
     </a>
     <h1 class="signature" translate="no">get_current_discovery_events()</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/discovery.ex#L65" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/discovery.ex#L68" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -340,7 +330,7 @@ Store the event in the discovery events log for auditing purposes and dispatch t
     </a>
     <h1 class="signature" translate="no">get_discarded_discovery_events(event_number)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/discovery.ex#L82" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/discovery.ex#L85" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -370,7 +360,7 @@ Store the event in the discovery events log for auditing purposes and dispatch t
     </a>
     <h1 class="signature" translate="no">handle(event)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/discovery.ex#L38" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/discovery.ex#L41" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -390,16 +380,16 @@ Store the event in the discovery events log for auditing purposes and dispatch t
 Store the event in the discovery events log for auditing purposes and dispatch the commands.</p>
   </section>
 </section>
-<section class="detail" id="prune_discarded_discovery_events/1">
+<section class="detail" id="prune_discovery_events/1">
 
   <div class="detail-header">
-    <a href="#prune_discarded_discovery_events/1" class="detail-link" data-no-tooltip title="Link to this function">
+    <a href="#prune_discovery_events/1" class="detail-link" data-no-tooltip title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">prune_discarded_discovery_events(days)</h1>
+    <h1 class="signature" translate="no">prune_discovery_events(days)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/discovery.ex#L110" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/discovery.ex#L98" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -411,39 +401,11 @@ Store the event in the discovery events log for auditing purposes and dispatch t
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> prune_discarded_discovery_events(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> prune_discovery_events(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>()) :: :ok</pre>
 
       </div>
 
-<p>Prune the discarded discovery events log by removing the events older than the given number of days.</p>
-  </section>
-</section>
-<section class="detail" id="prune_events/1">
-
-  <div class="detail-header">
-    <a href="#prune_events/1" class="detail-link" data-no-tooltip title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">prune_events(days)</h1>
-
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/discovery.ex#L95" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> prune_events(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()</pre>
-
-      </div>
-
-<p>Prune the discovery events log by removing the events older than the given number of days.</p>
+<p>Prune all discovery events (regular and discarded) older than the given number of days.</p>
   </section>
 </section>
 <section class="detail" id="request_cluster_discovery/1">
@@ -455,7 +417,7 @@ Store the event in the discovery events log for auditing purposes and dispatch t
     </a>
     <h1 class="signature" translate="no">request_cluster_discovery(cluster_id)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/discovery.ex#L131" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/discovery.ex#L138" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -483,7 +445,7 @@ Store the event in the discovery events log for auditing purposes and dispatch t
     </a>
     <h1 class="signature" translate="no">request_cluster_hosts_discovery(cluster_id)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/discovery.ex#L144" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/discovery.ex#L151" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -511,7 +473,7 @@ Store the event in the discovery events log for auditing purposes and dispatch t
     </a>
     <h1 class="signature" translate="no">request_saptune_discovery(host_id)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/discovery.ex#L125" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/discovery.ex#L132" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>

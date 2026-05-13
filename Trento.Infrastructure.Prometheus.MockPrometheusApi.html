@@ -5,16 +5,16 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.34.2">
-    <meta name="project" content="Trento Web v2.5.0">
+    <meta name="project" content="Trento Web v3.0.0">
 
 
-    <title>Trento.Infrastructure.Prometheus.MockPrometheusApi — Trento Web v2.5.0</title>
+    <title>Trento.Infrastructure.Prometheus.MockPrometheusApi — Trento Web v3.0.0</title>
     <link rel="stylesheet" href="dist/html-elixir-F2VRIOKR.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-K7URE6B4.js"></script>
-    <script src="dist/sidebar_items-4E929059.js"></script>
+    <script src="dist/sidebar_items-A0BE77AF.js"></script>
     <script src="docs_config.js"></script>
     <script async src="dist/html-YIPIRHGU.js"></script>
 
@@ -54,7 +54,7 @@
 Trento Web
         </a>
         <div class="sidebar-projectVersion" translate="no">
-          v2.5.0
+          v3.0.0
         </div>
       </div>
     </div>
@@ -126,13 +126,13 @@ Info
 <div id="top-content">
   <h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L4" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
 
     <span translate="no">Trento.Infrastructure.Prometheus.MockPrometheusApi</span> 
-    <small class="app-vsn" translate="no">(Trento Web v2.5.0)</small>
+    <small class="app-vsn" translate="no">(Trento Web v3.0.0)</small>
 
   </h1>
 
@@ -217,6 +217,46 @@ Info
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#devices_avail/2" data-no-tooltip translate="no">devices_avail(_, time)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Callback implementation for <a href="Trento.Charts.HostDataFetcher.html#c:devices_avail/2"><code class="inline">Trento.Charts.HostDataFetcher.devices_avail/2</code></a>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#devices_size/2" data-no-tooltip translate="no">devices_size(_, time)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Callback implementation for <a href="Trento.Charts.HostDataFetcher.html#c:devices_size/2"><code class="inline">Trento.Charts.HostDataFetcher.devices_size/2</code></a>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#filesystems_avail/2" data-no-tooltip translate="no">filesystems_avail(_, time)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Callback implementation for <a href="Trento.Charts.HostDataFetcher.html#c:filesystems_avail/2"><code class="inline">Trento.Charts.HostDataFetcher.filesystems_avail/2</code></a>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#filesystems_size/2" data-no-tooltip translate="no">filesystems_size(_, time)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Callback implementation for <a href="Trento.Charts.HostDataFetcher.html#c:filesystems_size/2"><code class="inline">Trento.Charts.HostDataFetcher.filesystems_size/2</code></a>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#get_exporters_status/1" data-no-tooltip translate="no">get_exporters_status(_)</a>
 
       </div>
@@ -232,6 +272,26 @@ Info
       </div>
 
         <div class="summary-synopsis"><p>Callback implementation for <a href="Trento.Charts.HostDataFetcher.html#c:num_cpus/2"><code class="inline">Trento.Charts.HostDataFetcher.num_cpus/2</code></a>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#query/2" data-no-tooltip translate="no">query(_, _)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Callback implementation for <a href="Trento.Infrastructure.Prometheus.Gen.html#c:query/2"><code class="inline">Trento.Infrastructure.Prometheus.Gen.query/2</code></a>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#query_range/3" data-no-tooltip translate="no">query_range(_, _, _)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Callback implementation for <a href="Trento.Infrastructure.Prometheus.Gen.html#c:query_range/3"><code class="inline">Trento.Infrastructure.Prometheus.Gen.query_range/3</code></a>.</p></div>
 
     </div>
 
@@ -277,6 +337,26 @@ Info
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#swap_avail/2" data-no-tooltip translate="no">swap_avail(_, time)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Callback implementation for <a href="Trento.Charts.HostDataFetcher.html#c:swap_avail/2"><code class="inline">Trento.Charts.HostDataFetcher.swap_avail/2</code></a>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#swap_total/2" data-no-tooltip translate="no">swap_total(_, time)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Callback implementation for <a href="Trento.Charts.HostDataFetcher.html#c:swap_total/2"><code class="inline">Trento.Charts.HostDataFetcher.swap_total/2</code></a>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#swap_used/3" data-no-tooltip translate="no">swap_used(_, from, to)</a>
 
       </div>
@@ -307,7 +387,7 @@ Info
     </a>
     <h1 class="signature" translate="no">cpu_busy_iowait(_, from, to)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L11" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L27" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -329,7 +409,7 @@ Info
     </a>
     <h1 class="signature" translate="no">cpu_busy_irqs(_, from, to)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L16" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L32" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -351,7 +431,7 @@ Info
     </a>
     <h1 class="signature" translate="no">cpu_busy_other(_, from, to)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L15" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L31" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -373,7 +453,7 @@ Info
     </a>
     <h1 class="signature" translate="no">cpu_busy_system(_, from, to)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L13" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L29" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -395,7 +475,7 @@ Info
     </a>
     <h1 class="signature" translate="no">cpu_busy_user(_, from, to)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L14" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L30" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -417,7 +497,7 @@ Info
     </a>
     <h1 class="signature" translate="no">cpu_idle(_, from, to)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L12" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L28" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -430,6 +510,94 @@ Info
 <p>Callback implementation for <a href="Trento.Charts.HostDataFetcher.html#c:cpu_idle/3"><code class="inline">Trento.Charts.HostDataFetcher.cpu_idle/3</code></a>.</p>
   </section>
 </section>
+<section class="detail" id="devices_avail/2">
+
+  <div class="detail-header">
+    <a href="#devices_avail/2" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">devices_avail(_, time)</h1>
+
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L50" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Callback implementation for <a href="Trento.Charts.HostDataFetcher.html#c:devices_avail/2"><code class="inline">Trento.Charts.HostDataFetcher.devices_avail/2</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="devices_size/2">
+
+  <div class="detail-header">
+    <a href="#devices_size/2" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">devices_size(_, time)</h1>
+
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L47" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Callback implementation for <a href="Trento.Charts.HostDataFetcher.html#c:devices_size/2"><code class="inline">Trento.Charts.HostDataFetcher.devices_size/2</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="filesystems_avail/2">
+
+  <div class="detail-header">
+    <a href="#filesystems_avail/2" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">filesystems_avail(_, time)</h1>
+
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L56" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Callback implementation for <a href="Trento.Charts.HostDataFetcher.html#c:filesystems_avail/2"><code class="inline">Trento.Charts.HostDataFetcher.filesystems_avail/2</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="filesystems_size/2">
+
+  <div class="detail-header">
+    <a href="#filesystems_size/2" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">filesystems_size(_, time)</h1>
+
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L53" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Callback implementation for <a href="Trento.Charts.HostDataFetcher.html#c:filesystems_size/2"><code class="inline">Trento.Charts.HostDataFetcher.filesystems_size/2</code></a>.</p>
+  </section>
+</section>
 <section class="detail" id="get_exporters_status/1">
 
   <div class="detail-header">
@@ -439,7 +607,7 @@ Info
     </a>
     <h1 class="signature" translate="no">get_exporters_status(_)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L23" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L39" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -461,7 +629,7 @@ Info
     </a>
     <h1 class="signature" translate="no">num_cpus(_, _)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L22" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L38" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -474,6 +642,50 @@ Info
 <p>Callback implementation for <a href="Trento.Charts.HostDataFetcher.html#c:num_cpus/2"><code class="inline">Trento.Charts.HostDataFetcher.num_cpus/2</code></a>.</p>
   </section>
 </section>
+<section class="detail" id="query/2">
+
+  <div class="detail-header">
+    <a href="#query/2" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">query(_, _)</h1>
+
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L41" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Callback implementation for <a href="Trento.Infrastructure.Prometheus.Gen.html#c:query/2"><code class="inline">Trento.Infrastructure.Prometheus.Gen.query/2</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="query_range/3">
+
+  <div class="detail-header">
+    <a href="#query_range/3" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">query_range(_, _, _)</h1>
+
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L44" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Callback implementation for <a href="Trento.Infrastructure.Prometheus.Gen.html#c:query_range/3"><code class="inline">Trento.Infrastructure.Prometheus.Gen.query_range/3</code></a>.</p>
+  </section>
+</section>
 <section class="detail" id="ram_cache_and_buffer/3">
 
   <div class="detail-header">
@@ -483,7 +695,7 @@ Info
     </a>
     <h1 class="signature" translate="no">ram_cache_and_buffer(_, from, to)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L19" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L35" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -505,7 +717,7 @@ Info
     </a>
     <h1 class="signature" translate="no">ram_free(_, from, to)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L20" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L36" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -527,7 +739,7 @@ Info
     </a>
     <h1 class="signature" translate="no">ram_total(_, from, to)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L17" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L33" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -549,7 +761,7 @@ Info
     </a>
     <h1 class="signature" translate="no">ram_used(_, from, to)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L18" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L34" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -562,6 +774,50 @@ Info
 <p>Callback implementation for <a href="Trento.Charts.HostDataFetcher.html#c:ram_used/3"><code class="inline">Trento.Charts.HostDataFetcher.ram_used/3</code></a>.</p>
   </section>
 </section>
+<section class="detail" id="swap_avail/2">
+
+  <div class="detail-header">
+    <a href="#swap_avail/2" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">swap_avail(_, time)</h1>
+
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L61" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Callback implementation for <a href="Trento.Charts.HostDataFetcher.html#c:swap_avail/2"><code class="inline">Trento.Charts.HostDataFetcher.swap_avail/2</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="swap_total/2">
+
+  <div class="detail-header">
+    <a href="#swap_total/2" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">swap_total(_, time)</h1>
+
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L59" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Callback implementation for <a href="Trento.Charts.HostDataFetcher.html#c:swap_total/2"><code class="inline">Trento.Charts.HostDataFetcher.swap_total/2</code></a>.</p>
+  </section>
+</section>
 <section class="detail" id="swap_used/3">
 
   <div class="detail-header">
@@ -571,7 +827,7 @@ Info
     </a>
     <h1 class="signature" translate="no">swap_used(_, from, to)</h1>
 
-      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L21" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/trento-project/web/blob/main/lib/trento/infrastructure/prometheus/adapter/mock_prometheus_api.ex#L37" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>

@@ -5,6 +5,10 @@ Mix.Tasks.PruneEvents.html
 Mix.Tasks.Version.html
 TestCommandedApp.html
 TestEventHandlerWithFailureContext.html
+Trento.AI.ApplicationConfigLoader.html
+Trento.AI.Configurations.html
+Trento.AI.LLMRegistry.html
+Trento.AI.html
 Trento.Abilities.UsersAbilities.html
 Trento.Abilities.html
 Trento.ActivityLog.ActivityCatalog.html
@@ -26,7 +30,9 @@ Trento.Charts.ChartTimeSeries.html
 Trento.Charts.ChartTimeSeriesSample.html
 Trento.Charts.HostDataFetcher.html
 Trento.Charts.Hosts.HostCpuChart.html
+Trento.Charts.Hosts.HostFilesystemChart.html
 Trento.Charts.Hosts.HostMemoryChart.html
+Trento.Charts.SampledMetric.html
 Trento.Charts.html
 Trento.Clusters.Cluster.html
 Trento.Clusters.ClusterEnrichmentData.html
@@ -39,6 +45,7 @@ Trento.Clusters.Commands.SelectChecks.html
 Trento.Clusters.Enums.AscsErsClusterRole.html
 Trento.Clusters.Enums.ClusterEnsaVersion.html
 Trento.Clusters.Enums.ClusterHostStatus.html
+Trento.Clusters.Enums.ClusterState.html
 Trento.Clusters.Enums.ClusterType.html
 Trento.Clusters.Enums.FilesystemType.html
 Trento.Clusters.Enums.HanaArchitectureType.html
@@ -118,6 +125,8 @@ Trento.Discovery.Payloads.Cluster.CibDiscoveryPayload.CibResources.Clone.html
 Trento.Discovery.Payloads.Cluster.CibDiscoveryPayload.CibResources.Group.html
 Trento.Discovery.Payloads.Cluster.CibDiscoveryPayload.CibResources.Master.html
 Trento.Discovery.Payloads.Cluster.CibDiscoveryPayload.CibResources.html
+Trento.Discovery.Payloads.Cluster.CibDiscoveryPayload.Configuration.Constraints.RscLocation.html
+Trento.Discovery.Payloads.Cluster.CibDiscoveryPayload.Configuration.Constraints.html
 Trento.Discovery.Payloads.Cluster.CibDiscoveryPayload.Configuration.CrmConfig.ClusterProperties.html
 Trento.Discovery.Payloads.Cluster.CibDiscoveryPayload.Configuration.CrmConfig.html
 Trento.Discovery.Payloads.Cluster.CibDiscoveryPayload.Configuration.html
@@ -240,6 +249,7 @@ Trento.Hosts.Commands.UpdateProvider.html
 Trento.Hosts.Commands.UpdateSaptuneStatus.html
 Trento.Hosts.Commands.UpdateSlesSubscriptions.html
 Trento.Hosts.Enums.Architecture.html
+Trento.Hosts.Enums.PrometheusMode.html
 Trento.Hosts.Events.HeartbeatFailed.html
 Trento.Hosts.Events.HeartbeatSucceeded.html
 Trento.Hosts.Events.HostChecksHealthChanged.html
@@ -303,6 +313,8 @@ Trento.Infrastructure.Commanded.ProcessManagers.DeregistrationProcessManager.Ins
 Trento.Infrastructure.Commanded.ProcessManagers.DeregistrationProcessManager.html
 Trento.Infrastructure.Commanded.RollUp.Queries.html
 Trento.Infrastructure.Commanded.RollUp.RollUp.html
+Trento.Infrastructure.ComponentVersions.Gen.html
+Trento.Infrastructure.ComponentVersions.html
 Trento.Infrastructure.Discovery.AMQP.Publisher.html
 Trento.Infrastructure.Messaging.Adapter.AMQP.Consumer.html
 Trento.Infrastructure.Messaging.Adapter.AMQP.Publisher.html
@@ -312,12 +324,16 @@ Trento.Infrastructure.Operations.AMQP.Consumer.html
 Trento.Infrastructure.Operations.AMQP.Processor.html
 Trento.Infrastructure.Operations.AMQP.Publisher.html
 Trento.Infrastructure.Operations.html
+Trento.Infrastructure.Prometheus.Adapter.HttpClient.html
 Trento.Infrastructure.Prometheus.ChartIntegration.html
 Trento.Infrastructure.Prometheus.Gen.html
 Trento.Infrastructure.Prometheus.MockPrometheusApi.html
+Trento.Infrastructure.Prometheus.PromQL.html
 Trento.Infrastructure.Prometheus.PrometheusApi.html
 Trento.Infrastructure.Prometheus.PrometheusSamples.html
 Trento.Infrastructure.Prometheus.html
+Trento.Infrastructure.SSO.Config.html
+Trento.Infrastructure.SSO.html
 Trento.Infrastructure.SoftwareUpdates.Auth.Gen.html
 Trento.Infrastructure.SoftwareUpdates.Auth.State.html
 Trento.Infrastructure.SoftwareUpdates.Auth.SumaAuth.html
@@ -484,12 +500,15 @@ TrentoWeb.Plugs.ChartsDisabledPlug.html
 TrentoWeb.Plugs.ExternalIdpGuardPlug.html
 TrentoWeb.Plugs.LoadUserPlug.html
 TrentoWeb.Plugs.OperationsPolicyPlug.html
+TrentoWeb.Plugs.UpdateLastLoginAtPlug.html
 TrentoWeb.Router.html
 TrentoWeb.SessionController.html
 TrentoWeb.SessionJSON.html
 TrentoWeb.TokensCase.html
 TrentoWeb.UserChannel.html
 TrentoWeb.UserSocket.html
+TrentoWeb.V1.AIConfigurationController.html
+TrentoWeb.V1.AIConfigurationJSON.html
 TrentoWeb.V1.AbilityController.html
 TrentoWeb.V1.AbilityJSON.html
 TrentoWeb.V1.AboutController.html
@@ -544,7 +563,7 @@ dist/lato-latin-ext-300-normal-VPGGJKJL.woff2
 dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 dist/remixicon-NKANDIL5.woff2
-dist/search_data-9B4113D3.js
-dist/sidebar_items-4E929059.js
+dist/search_data-38769A0C.js
+dist/sidebar_items-A0BE77AF.js
 index.html
 search.html
