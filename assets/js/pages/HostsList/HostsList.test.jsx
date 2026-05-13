@@ -453,6 +453,7 @@ describe('HostsLists component', () => {
 
       const hosts = hostFactory.buildList(1, {
         id: 'host1',
+        hostname: 'host-1',
         tags: [{ value: 'Tag1' }],
       });
       const sid = generateSid();
