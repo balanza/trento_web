@@ -173,10 +173,20 @@ describe('checksUtils', () => {
   });
 
   it('should get host expectation statements results', () => {
+    // Use explicit unique names to avoid collisions across factories.
+    // Each catalogExpect*Factory has its own sequence counter that resets
+    // per factory, so two factories may emit the same `${word}_${seq}`
+    // name when their sequences happen to align (notably when this test
+    // runs in isolation via `-t` and all factory sequences start at 1).
+    const expectationNames = Array.from({ length: 5 }, () =>
+      faker.string.uuid()
+    );
     const expectations = [].concat(
-      catalogExpectExpectationFactory.buildList(3),
-      catalogExpectSameExpectationFactory.build(),
-      catalogExpectEnumExpectationFactory.build()
+      catalogExpectExpectationFactory.build({ name: expectationNames[0] }),
+      catalogExpectExpectationFactory.build({ name: expectationNames[1] }),
+      catalogExpectExpectationFactory.build({ name: expectationNames[2] }),
+      catalogExpectSameExpectationFactory.build({ name: expectationNames[3] }),
+      catalogExpectEnumExpectationFactory.build({ name: expectationNames[4] })
     );
 
     const [
