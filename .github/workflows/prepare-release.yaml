@@ -116,29 +116,38 @@ jobs:
 
             echo "::group::Porting PR #${num} (${sha}) onto ${branch}"
 
-            existing=$(gh pr list --head "$branch" --base release --state all \
-              --json number,state --limit 1)
-            case "$(echo "$existing" | jq -r '.[0].state // "NONE"')" in
-              OPEN)
-                echo "Porting PR #$(echo "$existing" | jq -r '.[0].number') already open for ${branch} — skipping."
-                echo "::endgroup::"
-                continue
-                ;;
-              MERGED)
-                echo "Porting PR #$(echo "$existing" | jq -r '.[0].number') already merged into 'release' — skipping."
-                echo "::endgroup::"
-                continue
-                ;;
-              CLOSED)
-                echo "::warning::Porting PR #$(echo "$existing" | jq -r '.[0].number') for ${branch} was closed by a reviewer — skipping. Delete it manually if you want to recreate."
-                echo "::endgroup::"
-                continue
-                ;;
-            esac
-
             if git ls-remote --exit-code --heads origin "$branch" > /dev/null 2>&1; then
-              echo "Found orphan branch ${branch} (no PR) — deleting before recreate."
-              git push origin --delete "$branch"
+              existing=$(gh pr list --head "$branch" --base release --state all \
+                --json number,state --limit 1)
+              case "$(echo "$existing" | jq -r '.[0].state // "NONE"')" in
+                OPEN)
+                  echo "Porting PR #$(echo "$existing" | jq -r '.[0].number') already open for ${branch} — skipping."
+                  echo "::endgroup::"
+                  continue
+                  ;;
+                MERGED)
+                  echo "Porting PR #$(echo "$existing" | jq -r '.[0].number') already merged into 'release' — skipping."
+                  echo "::endgroup::"
+                  continue
+                  ;;
+                CLOSED)
+                  echo "::warning::Porting PR #$(echo "$existing" | jq -r '.[0].number') was closed but branch ${branch} still exists — skipping. Delete the branch manually to recreate the PR."
+                  echo "::endgroup::"
+                  continue
+                  ;;
+                NONE)
+                  echo "Found orphan branch ${branch} (no PR) — deleting before recreate."
+                  git push origin --delete "$branch"
+                  ;;
+              esac
+            else
+              merged=$(gh pr list --head "$branch" --base release --state merged \
+                --json number --limit 1)
+              if [ "$(echo "$merged" | jq 'length')" -gt 0 ]; then
+                echo "Porting PR #$(echo "$merged" | jq -r '.[0].number') already merged into 'release' (branch deleted) — skipping."
+                echo "::endgroup::"
+                continue
+              fi
             fi
 
             git checkout release
@@ -175,26 +184,30 @@ jobs:
           set -euo pipefail
           branch="version/${NEXT}"
 
-          existing=$(gh pr list --head "$branch" --base release --state all \
-            --json number,state --limit 1)
-          case "$(echo "$existing" | jq -r '.[0].state // "NONE"')" in
-            OPEN)
-              echo "Version-trigger PR #$(echo "$existing" | jq -r '.[0].number') already open — nothing to do."
-              exit 0
-              ;;
-            MERGED)
-              echo "::error::Version-trigger PR #$(echo "$existing" | jq -r '.[0].number') has already been merged — release ${NEXT} was already triggered. Bump again to start a new release."
-              exit 1
-              ;;
-            CLOSED)
-              echo "::error::Version-trigger PR #$(echo "$existing" | jq -r '.[0].number') was closed. Delete it (and branch '${branch}') manually if you want to retry the release."
-              exit 1
-              ;;
-          esac
+          merged=$(gh pr list --head "$branch" --base release --state merged \
+            --json number --limit 1)
+          if [ "$(echo "$merged" | jq 'length')" -gt 0 ]; then
+            echo "::error::Version-trigger PR #$(echo "$merged" | jq -r '.[0].number') has already been merged — release ${NEXT} was triggered. Bump to a new version to start another release."
+            exit 1
+          fi
 
           if git ls-remote --exit-code --heads origin "$branch" > /dev/null 2>&1; then
-            echo "Found orphan branch ${branch} (no PR) — deleting before recreate."
-            git push origin --delete "$branch"
+            existing=$(gh pr list --head "$branch" --base release --state all \
+              --json number,state --limit 1)
+            case "$(echo "$existing" | jq -r '.[0].state // "NONE"')" in
+              OPEN)
+                echo "Version-trigger PR #$(echo "$existing" | jq -r '.[0].number') already open — nothing to do."
+                exit 0
+                ;;
+              CLOSED)
+                echo "::error::Version-trigger PR #$(echo "$existing" | jq -r '.[0].number') was closed but branch '${branch}' still exists. Delete the branch manually if you want to retry."
+                exit 1
+                ;;
+              NONE)
+                echo "Found orphan branch ${branch} (no PR) — deleting before recreate."
+                git push origin --delete "$branch"
+                ;;
+            esac
           fi
 
           git checkout release

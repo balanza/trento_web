@@ -24,17 +24,30 @@ A re-run of `prepare-release` for the **same** `NEXT` version transparently pick
 
 ### Per-item state model
 
-For each piece of work (each porting PR, the version-trigger PR), look up the existing PR by head branch and act on its state:
+For each piece of work, **branch existence is the primary signal of "live work"**. The PR state only matters when the branch is present. A closed-then-cleaned-up PR (branch gone) is treated as "no work yet" so the same version can be re-attempted from scratch.
 
-| Item state | Action |
-|---|---|
-| PR OPEN | Skip — already done |
-| PR MERGED (porting) | Skip — already on `release` |
-| PR MERGED (version-trigger) | **Abort** — release already triggered |
-| PR CLOSED (porting) | Skip with warning — respect reviewer's rejection |
-| PR CLOSED (version-trigger) | **Abort** — tell user to delete manually if they want to retry |
-| No PR, orphan branch exists | Delete orphan, recreate fresh |
-| Nothing | Fresh creation (current behavior) |
+**Porting PR per item:**
+
+| Branch | Latest PR | Action |
+|---|---|---|
+| exists | OPEN | Skip — already done |
+| exists | MERGED | Skip — already on `release` |
+| exists | CLOSED | Skip with warning — respect reviewer's close; user can delete the branch to recreate |
+| exists | none | Delete orphan branch, recreate fresh |
+| missing | MERGED | Skip — already on `release` (branch was auto-deleted on merge) |
+| missing | any other | Fresh creation |
+
+**Version-trigger PR:**
+
+| Branch | Latest PR | Action |
+|---|---|---|
+| (any) | MERGED ever exists | **Abort** — release already triggered |
+| exists | OPEN | Skip (exit 0) — already done |
+| exists | CLOSED | **Abort** — tell user to delete branch manually to retry |
+| exists | none | Delete orphan, recreate fresh |
+| missing | none / CLOSED-only | Fresh creation |
+
+(MERGED is checked first via a dedicated `--state merged` query, so it short-circuits regardless of branch state — preventing accidental re-trigger of a release that's already shipped.)
 
 ### "In-flight" guard refinement
 
