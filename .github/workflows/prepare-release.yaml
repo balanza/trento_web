@@ -14,6 +14,14 @@ on:
           - major
           - minor
           - patch
+      source:
+        description: "Where to compose the release from"
+        required: true
+        type: choice
+        default: release
+        options:
+          - release
+          - main
 
 concurrency:
   group: prepare-release
@@ -21,18 +29,19 @@ concurrency:
 
 jobs:
   prepare:
-    name: Compose ${{ inputs.version_bump }} release
+    name: Compose ${{ inputs.version_bump }} release from ${{ inputs.source }}
     runs-on: ubuntu-24.04
     permissions:
       contents: write
       pull-requests: write
     env:
       GH_TOKEN: ${{ secrets.TRENTOBOT_GH_PAT }}
+      SOURCE: ${{ inputs.source }}
     steps:
-      - name: Check out 'release' branch
+      - name: Check out '${{ inputs.source }}' branch
         uses: actions/checkout@v4
         with:
-          ref: release
+          ref: ${{ inputs.source }}
           fetch-depth: 0
           token: ${{ secrets.TRENTOBOT_GH_PAT }}
 
@@ -70,22 +79,23 @@ jobs:
         run: |
           set -euo pipefail
           open=$(gh pr list \
-            --base release --state open \
+            --base "$SOURCE" --state open \
             --json number,title,headRefName)
           others=$(echo "$open" | jq --arg ver "${NEXT}" '
             [.[] | select(
-              ((.headRefName | startswith("port/\($ver)/")) | not)
-              and (.headRefName != "version/\($ver)")
+              ((.headRefName | startswith("port/")) and ((.headRefName | startswith("port/\($ver)/")) | not))
+              or ((.headRefName | startswith("version/")) and (.headRefName != "version/\($ver)"))
             )]
           ')
           count=$(echo "$others" | jq 'length')
           if [ "$count" -gt 0 ]; then
-            echo "::error::Found ${count} open PR(s) against 'release' for a different release. Close or merge them before starting a new ${NEXT} release."
+            echo "::error::Found ${count} open release-coordinating PR(s) against '${SOURCE}' for a different version. Resolve them before starting a new ${NEXT} release."
             echo "$others" | jq -r '.[] | "  #\(.number) \(.title) (head: \(.headRefName))"'
             exit 1
           fi
 
       - name: Fetch merged PRs for milestone ${{ steps.versions.outputs.next }}
+        if: inputs.source == 'release'
         run: |
           set -euo pipefail
           gh pr list \
@@ -103,6 +113,7 @@ jobs:
           jq -r '.[] | "  #\(.number) \(.title)"' prs.json
 
       - name: Open porting PRs against 'release'
+        if: inputs.source == 'release'
         run: |
           set -euo pipefail
           git fetch origin main
@@ -184,7 +195,7 @@ jobs:
           set -euo pipefail
           branch="version/${NEXT}"
 
-          merged=$(gh pr list --head "$branch" --base release --state merged \
+          merged=$(gh pr list --head "$branch" --base "$SOURCE" --state merged \
             --json number --limit 1)
           if [ "$(echo "$merged" | jq 'length')" -gt 0 ]; then
             echo "::error::Version-trigger PR #$(echo "$merged" | jq -r '.[0].number') has already been merged — release ${NEXT} was triggered. Bump to a new version to start another release."
@@ -192,7 +203,7 @@ jobs:
           fi
 
           if git ls-remote --exit-code --heads origin "$branch" > /dev/null 2>&1; then
-            existing=$(gh pr list --head "$branch" --base release --state all \
+            existing=$(gh pr list --head "$branch" --base "$SOURCE" --state all \
               --json number,state --limit 1)
             case "$(echo "$existing" | jq -r '.[0].state // "NONE"')" in
               OPEN)
@@ -210,22 +221,33 @@ jobs:
             esac
           fi
 
-          git checkout release
+          git checkout "$SOURCE"
           git checkout -b "$branch"
           echo "${NEXT}" > VERSION
           git add VERSION
           git commit -m "Bump VERSION to ${NEXT}"
           git push origin "$branch"
 
-          body=$(cat <<EOF
+          if [ "$SOURCE" = "release" ]; then
+            body=$(cat <<EOF
           Bumps the VERSION file to **${NEXT}**.
 
           Merging this PR triggers the release workflow. Do not merge until all porting PRs against \`release\` have been merged — the *Validate Release Trigger PR* check enforces this.
           EOF
-          )
+            )
+          else
+            body=$(cat <<EOF
+          Bumps the VERSION file to **${NEXT}** on \`main\`.
+
+          Merging this PR triggers the release workflow from main HEAD. \`release.yaml\` will tag ${NEXT} and cross-merge main into \`release\` automatically.
+
+          Note: there is no automated validation on PRs into \`main\` — review carefully.
+          EOF
+            )
+          fi
 
           gh pr create \
-            --base release \
+            --base "$SOURCE" \
             --head "$branch" \
             --title "Trigger release ${NEXT}" \
             --label skip-release-notes \
